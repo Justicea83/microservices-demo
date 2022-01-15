@@ -1,0 +1,10 @@
+{"namespace": "com.microservices.demo.kafka.avro.model",
+ "type": "record",
+ "name": "TwitterAvroModel",
+ "fields": [
+     {"name": "userId", "type": "long"},
+     {"name": "id",  "type": "long"},
+     {"name": "text",  "type": ["string", "null"]},
+     {"name": "createdAt", "type": ["long", "null"], "logicalType" : ["date", "null"]}
+ ]
+}

@@ -1,0 +1,397 @@
+2022-01-03 00:59:18 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 17.0.1 on Justices-Spectre with PID 1516 (C:\learn\frameworks\spring\microservices-course-1\microservices-demo\twitter-to-kafka-service\target\classes started by justi in C:\learn\frameworks\spring\microservices-course-1\microservices-demo)
+2022-01-03 00:59:18 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-01-03 00:59:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.799 seconds (JVM running for 1.259)
+2022-01-03 00:59:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Application started and listening...
+2022-01-03 00:59:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-01-03 01:02:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 17.0.1 on Justices-Spectre with PID 13912 (C:\learn\frameworks\spring\microservices-course-1\microservices-demo\twitter-to-kafka-service\target\classes started by justi in C:\learn\frameworks\spring\microservices-course-1\microservices-demo)
+2022-01-03 01:02:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-01-03 01:02:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.631 seconds (JVM running for 1.158)
+2022-01-03 01:02:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Application started and listening...
+2022-01-03 01:02:34 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-01-03 01:33:17 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+ in 'reader', line 2, column 3:
+      twitter-Keywords:
+      ^
+expected <block end>, but found '<scalar>'
+ in 'reader', line 8, column 47:
+     ... age: [Twitter to kafka service] --> Application started and list ... 
+                                         ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:252)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:186)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:314)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:305)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:314)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:305)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.getData(OriginTrackedYamlLoader.java:99)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:198)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:166)
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:84)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:54)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:36)
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:107)
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:128)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:86)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:121)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:240)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:227)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:102)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:94)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:102)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:87)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:296)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
+2022-01-03 01:34:55 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+ in 'reader', line 2, column 3:
+      twitter-Keywords:
+      ^
+expected <block end>, but found '<scalar>'
+ in 'reader', line 9, column 32:
+        [Twitter to kafka service] --> Application started and list ... 
+                                   ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:59)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector$1.peek(CommentEventsCollector.java:45)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:140)
+	at org.yaml.snakeyaml.comments.CommentEventsCollector.collectEvents(CommentEventsCollector.java:119)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:252)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:186)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:314)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:305)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:314)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:305)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:286)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:188)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:115)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:135)
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.getData(OriginTrackedYamlLoader.java:99)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:514)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:198)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:166)
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:84)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:54)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:36)
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:107)
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:128)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:86)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:121)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:240)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:227)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:102)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:94)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:102)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:87)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:296)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:28)
+2022-01-03 01:35:30 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 17.0.1 on Justices-Spectre with PID 1228 (C:\learn\frameworks\spring\microservices-course-1\microservices-demo\twitter-to-kafka-service\target\classes started by justi in C:\learn\frameworks\spring\microservices-course-1\microservices-demo)
+2022-01-03 01:35:30 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-01-03 01:35:30 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.624 seconds (JVM running for 1.137)
+2022-01-03 01:35:30 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Twitter to kafka service --> Application started and listening...
+2022-01-03 01:35:30 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-01-03 01:35:30 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2022-01-03 01:35:30 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - started filtering twitter stream for keywords [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-01-03 01:35:31 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
+2022-01-03 01:35:31 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
+2022-01-03 01:35:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @TomerStrolight @Holopainen_ https://t.co/iabWnPatCd
+2022-01-03 01:35:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @bloodygroovy either feb or spring maybe…
+2022-01-03 01:35:36 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @nuicemedia: A 41 y.o Palestinian man broke out of immigration detention in Pasuruan, East Java, by stealing a car and smashing it throu…
+2022-01-03 01:35:36 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RESPECTFULLY KICK HER OFF THIS BIRD APP
+2022-01-03 01:35:37 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Buddhist Monks in Myanmar sent prayers for the immediate restoration of democracy and for the fallen heroes of Spring Revolution.
+#WarCrimesOfJunta
+#2022Jan3Coup 
+#WhatsHappeningInMyanmar
+https://t.co/1NAAkoALut
+2022-01-03 01:35:39 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @renaissencepjm: ᥫ᭡𓂃 livros lidos em 2022 -- a thread 🌬️ ᳝፞𖥻
+
+❝Queremos livros que nos afetem como um desastre. Um livro deve ser como u…
+2022-01-03 01:35:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @nyssabiflora Our issue is there’s 1 native w/a few leaves before June (narrow leaf), all of the others just don’t even look like plants until long after spring monarchs have passed, & then dead when we have monarchs swinging out of diapause in 80F January days. Also, why are we avoiding it?
+2022-01-03 01:35:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @renaissencepjm: ᥫ᭡𓂃 livros lidos em 2022 -- a thread 🌬️ ᳝፞𖥻
+
+❝Queremos livros que nos afetem como um desastre. Um livro deve ser como u…
+2022-01-03 01:35:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text A1) We can change variables based on where they’re at in their season and tweak for other circumstances. For example, volleyball moves to off-season so might do similar sets/reps/exercises that other off-season teams did in the fall. And vice versa.
+#ironspeedchat
+2022-01-03 01:35:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text #clouddoor #clouddoor #clouddoor #clouddoor IntelliJ https://t.co/fYDfNmEad3 GitHub Copilot https://t.co/yQTU6fuIXs
+2022-01-03 01:35:42 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Draculasswife: Philipp Plein at milan fashion week, spring 2019. https://t.co/ssPu5gpQBo
+2022-01-03 01:35:43 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Or does it count as a ruined spring semester because covid is still happening
+2022-01-03 01:35:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Oops! Was #VeryAsian when my fam and I had dumplings, spring rolls, and noodles to go along with our hopping johns and greens for New Years 🤷🏻‍♀️
+2022-01-03 01:35:46 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Draculasswife: Philipp Plein at milan fashion week, spring 2019. https://t.co/ssPu5gpQBo
+2022-01-03 01:35:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Also, back to work tomorrow and I’m not even nervous. Excited for the new year ahead of me. Manifesting I get some chill students/clients for the spring semester ✨🤞🏾
+2022-01-03 01:35:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Mem0Delivery: I made one of those Shiny Hunting Bingo boards!
+
+Needed some incentive to shiny hunt this year although my Spring semeste…
+2022-01-03 01:35:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @enhawings you are my spring <3
+2022-01-03 01:35:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @ProjektMelody: Who says it's too early for spring cleaning?? 🧼
+2022-01-03 01:35:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @loscharlos: 32 today, so far I’ve spent my entire 30’s w/ #LongCovid 😵‍💫 ~ Haven’t been able to leave the house for a meaningful outing…
+2022-01-03 01:35:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @bbcdoctorwho Your article on the spring special calls the Sea Devils "aliens". They're not, they're from Earth 😂
+2022-01-03 01:35:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @CryptoKing1st: $300 GIVEAWAY IN 72 HOURS
+
+- RT & Follow @Madworldnft
+
+-----------------------------
+Go to https://t.co/ItYzwGFhg1 and M…
+2022-01-03 01:35:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @KiiaraLlc: that look she makes when @AtlanticRecords paid to increase follows #trendingkiiara @KIIARA 
+#Python #AI #IoT #IIoT #Azure #N…
+2022-01-03 01:35:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @tamami_5328: 【審査対象固定ツイートRT】
+⚠️RTは1/16 23:59まで⚠️
+
+MODECON in the spring Girlsに出場中のたまみ💍💄🌈です！！
+❤️2次審査1/19 23:59まで❤️
+目指せグランプリ👑
+応援宜しくお願いします💕…
+2022-01-03 01:35:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @CryptoKing1st: $300 GIVEAWAY IN 72 HOURS
+
+- RT & Follow @Madworldnft
+
+-----------------------------
+Go to https://t.co/ItYzwGFhg1 and M…
+2022-01-03 01:36:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @OHran21: Higashiyama's Bitou:
+
+"He decided to enter the school after seeing Ran Takahashi (second year at Nittaidai) and the best sprin…
+2022-01-03 01:36:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @AstroUnivers_ Mi top 3 ahorita es: MY ZONE, Our spring y Role play 
+#Restore_JINROCK #좀쉬자 #JINJIN_ROCKY #진진 #라키 #JINJIN #ROCKY #아스트로 #ASTRO
+2022-01-03 01:36:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ╔═══════════╗
+　PRE ORDER
+ ⠀春アイテムがお買い得に✅
+╚═══════════╝
+
+🎍謹賀新年🎍
+
+\◆SPRING ITEMが10%OFF◆/
+確実にGET出来てさらにお買い得に❤
+
+#ショートレングスジャケット
+▶︎ https://t.co/cM21yV98ld
+
+#タックワイドパンツ　
+▶︎ https://t.co/AJgS2rBoPF https://t.co/e8gWiB2DNR
+2022-01-03 01:36:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Faithful readers of my Twitter misadventures will note prominent displays of dumplings & Spring Festival decoration throughout the year with annual updates.
+I promise to be a good Asian Tiger in 壬寅年, aka, 2022 
+🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯🐯
+2022-01-03 01:36:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Shirwoooo: woke up and immediately drew maid spring 🧲🤕 https://t.co/mz2CkFgzu5 https://t.co/Gw5q5j84eT
+2022-01-03 01:36:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 授業でC言語触ったくらいだけどJavaの難易度ってどんなものだろう（アニメーションできると聞いて）
+2022-01-03 01:36:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text It was nice to get out with Aniyah and watch @RjBendert doing what he enjoys and getting ready for spring with @JohnWil362021 https://t.co/zZfOt9TSDB
+2022-01-03 01:36:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text i forgot to mention the spring water at the shop has/had hypochlorite/bleach in there. the effects are a very sore upper abdomen, and a very angry mood. i only noticed the smell of such bleach afterwards. if anybody suffering the same symptoms. i use a simple carbon filter now.
+2022-01-03 01:36:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ❗ランキング:35位❗(ナイト＆週末セール)
+
+「圧力IH炊飯器 極め炊き 5.5合炊き ブラック NW-JW10-BA」
+メーカ:象印マホービン
+
+価格:¥36,818✨ポイント5倍✨(10:36)
+
+https://t.co/EfH2DPoYIa
+2022-01-03 01:36:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ❗ランキング：15位❗(無停電電源装置（UPS）)
+
+「Smart-UPS 500 LCD 100V 無償保証期間：1年間 SMT500J-E」
+メーカ:SchneiderElectricJapan
+
+価格:¥23,980✨
+🔥売り切れ間近🔥(10:36)
+
+https://t.co/VOisG8NRcx
+2022-01-03 01:36:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @shamus_clancy: “Babe, the first Yankees spring training game is in 55 days.”
+2022-01-03 01:36:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I wonder how this spring semester is going to go now that the covid #’s are back up
+2022-01-03 01:36:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Clemson OC Brandon Streeter Provides Insight Into How He Will Manage QB’s In Spring #accfootball https://t.co/keExR8nlnw
+2022-01-03 01:36:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text New design 2022Fashion Design
+
+https://t.co/SagsALXihc #designs #NFT
+#clothes  #onlineshopping #shopping #brand #love #fashionblogger #design #dress #instafashion #fashionista #outfit #instagood #streetstyle #tshirts #fashionstyle #like https://t.co/wJUvkynN2P
+2022-01-03 01:36:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @therunchat A3: Rhythm cycling, walking and elliptical...maybe some swimming towards late spring #runchat
+2022-01-03 01:36:20 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @btsconcerthrs: thinking about yoongi leaning onto jimin during spring day https://t.co/8ghl9G2m7Q
+2022-01-03 01:36:20 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @nuicemedia: A 41 y.o Palestinian man broke out of immigration detention in Pasuruan, East Java, by stealing a car and smashing it throu…
+2022-01-03 01:36:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Women Basic Jacket Pocket Zipper Hooded Two Side Wear Loose Coat https://t.co/L6KCpNAEJR $37.00 https://t.co/QowRpIQBVP
+2022-01-03 01:36:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Bulboomer: Spring day & winter bear https://t.co/5jEUjv2Bjg
+2022-01-03 01:36:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @jasonleitch: For those responding angrily because of this headline from @thetimesscot please listen to the interview on Radio 4 at 1.10…
+2022-01-03 01:36:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text The sea shines as calmly as glass. I mysterious that night. Strange, but I am what I am, like a swallow in spring and autumn, for many reasons and hopes I have always had.  A strange migratory bird.
+2022-01-03 01:36:24 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @destheedoll Is this for the spring one in May?
+2022-01-03 01:36:25 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @walphieplopflee Happy January Walphie.I want spring to come back https://t.co/ggd9KUiw7m’s very cold and we are getting more snow tomorrow 🥶
+2022-01-03 01:36:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @fvirysona: join this giveaway first 
+
+fast likes will have better chances
+2022-01-03 01:36:27 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @BaystreetBrian @CaesarsPalace Spring maybe 😂😉
+2022-01-03 01:36:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @mama____64q: 【在庫状況】
+凛月 嵐 英智(spring) スバル HiMERU 翠 北斗 巽 司1 弓弦1 夏目1 〆 https://t.co/z2aYwA28wh
+2022-01-03 01:36:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Early early birthday gift by spoiling myself to some yankee tickets this spring😅
+2022-01-03 01:36:30 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Hai! kalo ada yg butuh jasa untuk:
+- photoshop (logo, pas foto, bg dll)
+- illustrator, corel.
+- word, excel, ppt
+- website frontend backend, wordpress, wix
+- phyton, C, C++, java, javascript
+- IT in general
+- flow chart, pseudocode etc
+
+dm/wa ya
+#zonauang #jokitugas #jokicoding
+2022-01-03 01:36:30 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @OnlyRuta: https://t.co/LB5GbPG6fV https://t.co/23IyHV4lC1
+2022-01-03 01:36:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Ayanonno3232: 🌸MODECON in the spring Girls🌸
+
+二次審査12/25～1/19
+
+【Twitter固定RT】
+・1RT=100pt
+・1/16(日)23:59までのRTが対象
+🌟この固定ツイートのみが対象
+
+【Web投票】
+1日1…
+2022-01-03 01:36:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @doodlebeth: In the spring/summer we put out bee houses with card tubes for bees to lay their eggs. In the autumn we bring them inside t…
+2022-01-03 01:36:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @PatrickZircher @TomTaylorMade and @GailSimone spring to mind. https://t.co/lL2YdfS7dh
+2022-01-03 01:36:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @hillel_art: Making this piece
+felt like discovery 💚🧡
+
+Fossil Falls 
+
+Spring 2022 @SuperRare
+
+My Beautiful #NFT Fam
+PLEASE RETWEET
+
+link…
+2022-01-03 01:36:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @colecubelic: Enjoyed it Pasadena...
+Spring ball on deck. https://t.co/naErKBIu6J
+2022-01-03 01:36:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Are we on the brink of OVER-vaccinating in the fight against Covid? Experts warn dishing out fourth jabs in spring may be unnecessary - and Omicron may be world's 'natural' vaccine that finally ends pandemic
+
+https://t.co/8mlHESAHQb
+2022-01-03 01:36:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I Need A Tazer Gun. Dreading Spring Again.  Men R Crazy. I Just Glow Everywhere I Go 🥴 https://t.co/Nbkx9MxvT9
+2022-01-03 01:36:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @AcceptBitcoinZ: #BitcoinZ is a Giant Sleeping!
+
+https://t.co/zG1UeuDJTS
+
+#BigData #Analytics #DataScience #AI #MachineLearning #IoT #II…
+2022-01-03 01:36:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text omg i got goosebump reading this🤧
+2022-01-03 01:36:36 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @bryymora: Early early birthday gift by spoiling myself to some yankee tickets this spring😅
+2022-01-03 01:36:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text They’re the lucky ones! Their flight certainly won’t be cancelled! #USflightstatus
+2022-01-03 01:36:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @loscharlos: 32 today, so far I’ve spent my entire 30’s w/ #LongCovid 😵‍💫 ~ Haven’t been able to leave the house for a meaningful outing…
+2022-01-03 01:36:42 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Work begins again tomorrow, Orientation sessions, classes & retreat all days apart & I’m feeling wildly optimistic b/c I’ve decided I won’t be exhausting myself to care about things that are out of my control. I will do my part & nothing more. Hello Spring term, let’s get it.
+2022-01-03 01:36:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I can handle your final paper, essay:-
+essay due
+java script
+anatomy
+accounting.
+power point
+essay pay  
+algebra
+history
+python
+chemistry
+statistics.
+business
+probab
+thesis @CustomPapers13.#homeworkslave.
+2022-01-03 01:36:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @nahuhh82 @uhh_merica @BrianMGreen @choo_ek Not sure where you get the idea that NYC had more covid deaths this year than last.  This chart shows clearly the peak was spring 2020 https://t.co/MGK9BKAbUs
+2022-01-03 01:36:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @loscharlos: 32 today, so far I’ve spent my entire 30’s w/ #LongCovid 😵‍💫 ~ Haven’t been able to leave the house for a meaningful outing…
+2022-01-03 01:36:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @teddy_faker: T1 2022 LCK SPRING SCHEDULE
+
+• all times are in KST
+
+#T1WIN https://t.co/IzTUK3d1pv
+2022-01-03 01:36:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @SCweather_wx It's been perfect, mosquito-filled spring weather.
+2022-01-03 01:36:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @AtlBlerd 2020 Sportster 1200, that pic is 2 years old at this point & the bike looks much different now. Gonna be upgrading this spring if I have the funds for a down payment w/ trade in.
+2022-01-03 01:36:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @AmberMcReynolds: USPS should start delivering at-home covid tests every 2 wks to every household from now through spring. Can we do thi…
+2022-01-03 01:36:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I'm ready to take a nap and wake up to spring https://t.co/mIWVXyoJZT
+2022-01-03 01:36:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text All the beauty of the spring went for hap
+
+انسخ الكود :LCS92: https://t.co/ROsqVpcKfK
+2022-01-03 01:36:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @mana94979976: 【交換】
+A3! MANKAI STAGE エーステ Troupe LIVE 2021 SPRING SUMMER  AUTUMN チェキ風 クリアシート 缶バッジ
+
+譲:真澄、綴、☆至、シトロン、天馬、幸、一成、椋、十座、太一
+
+リプへ➡︎…
+2022-01-03 01:36:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I’m at struggle. Everyone’s putting away their “Christmas decor” but what do you replace it with? Like I basically have 3 decorating seasons: spring, Halloween, and Christmas.
+2022-01-03 01:36:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text -Start hormone therapy, or at least get on that path
+-Get some kind of diagnosis and hopefully get help/medication
+-Get back to the mental state i was at in spring of 2019
+-Grow my relationship with some of my siblings
+-Stand up to my mother about the misgendering/deadnaming
+2022-01-03 01:36:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @jasonleitch: For those responding angrily because of this headline from @thetimesscot please listen to the interview on Radio 4 at 1.10…
+2022-01-03 01:37:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Udemy_Coupons1: Complete Python3 Bootcamp: Go from zero to hero in Python https://t.co/VloExIVkT6
+
+#MachineLearning. #BigData #Analytic…
+2022-01-03 01:37:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Iushbunny Fendi Spring 2022 Ready-to-Wear Fashion Show Collection: See the complete Fendi Spring 2022 Ready-to-Wear collection.
+Look 14
+ https://t.co/Nxk5WX5mKo
+2022-01-03 01:37:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @InUtahNotOfUtah: Any Latter-day Saint who says Biden is “senile” because of his age but also sustains the leaders of the church—I have…
+2022-01-03 01:37:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Mochievous: urgent: I called the Kenyan Police Service to report an assault that happened to me at my hotel & instead they have detaine…
+2022-01-03 01:37:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @jinkination: lee jinki in 2021
+
+210205: shadow ost 
+210505-0716: musical midnight sun
+210524: midnight sun osts
+210619-0915: sea of hop…
+2022-01-03 01:37:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Emywinst: https://t.co/0CsCHDQci9 https://t.co/jIqU8nN0P9
+2022-01-03 01:37:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Season 1 coming Spring 2022 https://t.co/NtUCDnjjV6
+2022-01-03 01:37:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @jenineharris: Teaching logistic regression in #rstats this spring? Looking for materials? I have a new *open access* 🎉 tutorial that in…
+2022-01-03 01:37:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @aitaikimochi: Here's my summary of the My Hero Academia School Briefs "Cherry Blossoms" light novel Chapter 1: "The Red Ogre Who Didn't…
+2022-01-03 01:37:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @loscharlos: 32 today, so far I’ve spent my entire 30’s w/ #LongCovid 😵‍💫 ~ Haven’t been able to leave the house for a meaningful outing…
+2022-01-03 01:37:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @charm1_charm: All the beauty of the spring went for hap
+
+انسخ الكود :LCS92: https://t.co/ROsqVpcKfK
+2022-01-03 01:37:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @fvirysona: join this giveaway first 
+
+fast likes will have better chances
+2022-01-03 01:37:15 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @fvirysona: join this giveaway first 
+
+fast likes will have better chances
+2022-01-03 01:37:16 [SpringApplicationShutdownHook] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - closing the twitter stream...
+2022-01-03 01:58:06 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 17.0.1 on Justices-Spectre with PID 1884 (C:\learn\frameworks\spring\microservices-course-1\microservices-demo\twitter-to-kafka-service\target\classes started by justi in C:\learn\frameworks\spring\microservices-course-1\microservices-demo)
+2022-01-03 01:58:06 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-01-03 01:58:07 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 0.677 seconds (JVM running for 1.222)
+2022-01-03 01:58:07 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Twitter to kafka service --> Application started and listening...
+2022-01-03 01:58:07 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-01-03 01:58:07 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2022-01-03 01:58:07 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - started filtering twitter stream for keywords [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-01-03 01:58:10 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
+2022-01-03 01:58:10 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
+2022-01-03 01:58:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @NiniLaNova: eeeeeeh demain je me réveille tôt et je suis encore là à faire la java
+2022-01-03 01:58:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Spring, love, happin IستايليII just hope I remember to tellكُوُدَ خَصٍمٍ IسيفيI and one-upping, There are parts of me that are bro ☑️ ARAB ☑️☑️ JVK ☑️ https://t.co/niIGBHuOsS
+2022-01-03 01:58:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @mikurubaeahina West of St Louis to LA was that when I moved last spring. 😵‍💫
+2022-01-03 01:58:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @pyaezone: "PDF forces in #Sagaing region helping farmers with rice harvesting as locals fear attacks from Min Aung Hlaing's terrorists.…
+2022-01-03 01:58:15 [SpringApplicationShutdownHook] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - closing the twitter stream...
