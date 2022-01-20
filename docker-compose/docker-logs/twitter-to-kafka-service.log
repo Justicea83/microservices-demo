@@ -1,0 +1,837 @@
+2022-01-16 03:59:33 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 17.0.1 on 3f51b1b8049a with PID 1 (/workspace/BOOT-INF/classes started by cnb in /workspace)
+2022-01-16 03:59:33 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to default profiles: default
+2022-01-16 03:59:35 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-01-16 03:59:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.0.0
+2022-01-16 03:59:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8cb0a5e9d3441962
+2022-01-16 03:59:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1642305575530
+2022-01-16 03:59:36 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
+2022-01-16 03:59:36 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 3.105 seconds (JVM running for 3.704)
+2022-01-16 03:59:36 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - APp starts...
+2022-01-16 03:59:36 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topic(s), attempt 0
+2022-01-16 03:59:36 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-01-16 03:59:36 [main] INFO  c.m.d.t.t.k.s.i.i.KafkaStreamInitializer - Topics with name twitter-topic is ready for operation!
+2022-01-16 03:59:36 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - started filtering twitter stream for keywords [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-01-16 03:59:36 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2022-01-16 03:59:38 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
+2022-01-16 03:59:38 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
+2022-01-16 03:59:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text spring day do bts chorava mt escutando essa em 2017 acho q ate hj se tocar eu choro
+2022-01-16 03:59:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1340758641339752449, "id": 1482563150507614210, "text": "spring day do bts chorava mt escutando essa em 2017 acho q ate hj se tocar eu choro", "createdAt": 1642305574000}' to topic='twitter-topic'
+2022-01-16 03:59:38 [Twitter4J Async Dispatcher[0]] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 1638400
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 60000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+
+2022-01-16 03:59:38 [Twitter4J Async Dispatcher[0]] INFO  i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	auto.register.schemas = true
+	avro.reflection.allow.null = false
+	avro.remove.java.properties = false
+	avro.use.logical.type.converters = false
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.token = [hidden]
+	context.name.strategy = class io.confluent.kafka.serializers.context.NullContextNameStrategy
+	id.compatibility.strict = true
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	latest.compatibility.strict = true
+	max.schemas.per.subject = 1000
+	normalize.schemas = false
+	proxy.host = 
+	proxy.port = -1
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.certificate.chain = null
+	schema.registry.ssl.keystore.key = null
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.certificates = null
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://schema-registry:8081]
+	use.latest.version = false
+	use.schema.id = -1
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+2022-01-16 03:59:38 [Twitter4J Async Dispatcher[0]] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.0.0
+2022-01-16 03:59:38 [Twitter4J Async Dispatcher[0]] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8cb0a5e9d3441962
+2022-01-16 03:59:38 [Twitter4J Async Dispatcher[0]] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1642305578351
+2022-01-16 03:59:38 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: VbtfgCUMRiia8wTiAHLO9g
+2022-01-16 03:59:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour "Kis-My-Ft ni Aeru de Show 2022" yesterday at Shizuoka's Ecopa A?
+2022-01-16 03:59:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1076691051635593216, "id": 1482563151417667587, "text": "RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour \"Kis-My-Ft ni Aeru de Show 2022\" yesterday at Shizuoka's Ecopa A\u2026", "createdAt": 1642305574000}' to topic='twitter-topic'
+2022-01-16 03:59:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @28ocIock The entirety of spring day and the truth untold
+2022-01-16 03:59:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1020835373415481344, "id": 1482563159395225602, "text": "@28ocIock The entirety of spring day and the truth untold", "createdAt": 1642305576000}' to topic='twitter-topic'
+2022-01-16 03:59:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Smoke bowl five Mexicans watch some TV tomorrow my dad have football game get ready brush my teeth shave shower get clean up wash up dial antibacterial soap for germs pimples I use irish spring in summer for bugs deers eat the crop
+2022-01-16 03:59:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1451098664877842438, "id": 1482563160469028865, "text": "Smoke bowl five Mexicans watch some TV tomorrow my dad have football game get ready brush my teeth shave shower get clean up wash up dial antibacterial soap for germs pimples I use irish spring in summer for bugs deers eat the crop", "createdAt": 1642305576000}' to topic='twitter-topic'
+2022-01-16 03:59:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text La zakata justificar pandemia hecho de que todos no aqui en culiacan ajustaran sus preferencia Sistema sin con java o sin  JavaScript puedes https://t.co/8Z6XbD7CRs
+2022-01-16 03:59:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1479026238043873282, "id": 1482563182220644361, "text": "La zakata justificar pandemia hecho de que todos no aqui en culiacan ajustaran sus preferencia Sistema sin con java o sin  JavaScript puedes https://t.co/8Z6XbD7CRs", "createdAt": 1642305581000}' to topic='twitter-topic'
+2022-01-16 03:59:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @ScottBobDoor Definitely looks like a double spring, anything below 4s is scary.
+2022-01-16 03:59:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1850076481, "id": 1482563188004737030, "text": "@ScottBobDoor Definitely looks like a double spring, anything below 4s is scary.", "createdAt": 1642305583000}' to topic='twitter-topic'
+2022-01-16 03:59:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text #?????????????????????(Java)??????#???? @dospara_web https://t.co/sZY2xY2zeg
+2022-01-16 03:59:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 213974385, "id": 1482563201086595073, "text": "#?????????????????????(Java)??????#???? @dospara_web https://t.co/sZY2xY2zeg", "createdAt": 1642305586000}' to topic='twitter-topic'
+2022-01-16 03:59:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @amtvmedia: Marching in the streets is worthless unless you end the mandates and get rid of the digital v passports worldwide. You have?
+2022-01-16 03:59:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 856191866, "id": 1482563205687922689, "text": "RT @amtvmedia: Marching in the streets is worthless unless you end the mandates and get rid of the digital v passports worldwide. You have\u2026", "createdAt": 1642305587000}' to topic='twitter-topic'
+2022-01-16 03:59:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text https://t.co/lnsJ32B8Zf.
+2022-01-16 03:59:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1392079175356350465, "id": 1482563209274232832, "text": "https://t.co/lnsJ32B8Zf.", "createdAt": 1642305588000}' to topic='twitter-topic'
+2022-01-16 03:59:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @BubblesxMakeup: quick swatchhhh! ???? chanel rouge coco baume ????? 914 natural charm ?? ????????? ?????????????? ????????????? ????????
+2022-01-16 03:59:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 78666942, "id": 1482563217478262787, "text": "RT @BubblesxMakeup: quick swatchhhh! ???? chanel rouge coco baume ????? 914 natural charm ?? ????????? ?????????????? ????????????? ???????\u2026", "createdAt": 1642305590000}' to topic='twitter-topic'
+2022-01-16 03:59:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Paul HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA line of 7 sa java ehe HAHAHAHAHA https://t.co/nXthArpZVf
+2022-01-16 03:59:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1479919509758963713, "id": 1482563219466043395, "text": "Paul HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA line of 7 sa java ehe HAHAHAHAHA https://t.co/nXthArpZVf", "createdAt": 1642305590000}' to topic='twitter-topic'
+2022-01-16 03:59:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Just a few thoughts...
+For spring & new growth https://t.co/fnZTIQTLff
+2022-01-16 03:59:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1055805177373093888, "id": 1482563222641197062, "text": "Just a few thoughts...\nFor spring & new growth https://t.co/fnZTIQTLff", "createdAt": 1642305591000}' to topic='twitter-topic'
+2022-01-16 03:59:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @evelyn_tokyo: ????
+
+???Spring collection?
+
+???????????
+?4,900?taxin?
+????????????????
+?5,500?taxin?
+
+??????????????????
+??????????point?
+2022-01-16 03:59:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 400720799, "id": 1482563234901413898, "text": "RT @evelyn_tokyo: ????\n\n???Spring collection?\n\n???????????\n?4,900?taxin?\n????????????????\n?5,500?taxin?\n\n??????????????????\n??????????point\u2026", "createdAt": 1642305594000}' to topic='twitter-topic'
+2022-01-16 03:59:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Anisbie: @DAY6_BOBSUNGJIN java translate:
+Sop bagong karo sego semangkok kwek kwek (suara entog) LGE!!
+2022-01-16 03:59:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 894207993369067520, "id": 1482563241339666434, "text": "RT @Anisbie: @DAY6_BOBSUNGJIN java translate:\nSop bagong karo sego semangkok kwek kwek (suara entog) LGE!!", "createdAt": 1642305596000}' to topic='twitter-topic'
+2022-01-16 03:59:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @officialshotaro spring will come https://t.co/isKH12ZKTK
+2022-01-16 03:59:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1343309877758849025, "id": 1482563241238740993, "text": "@officialshotaro spring will come https://t.co/isKH12ZKTK", "createdAt": 1642305596000}' to topic='twitter-topic'
+2022-01-16 04:00:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @YokoMill: #ACT?????
+??????16???
+SM3? x?70?
+
+The Artcomplex Center of Tokyo
+??????12-9
+
+????????
+?Waiting for Spring? Oil
+
+#popsurrealis?
+2022-01-16 04:00:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1272086211792760832, "id": 1482563243579445250, "text": "RT @YokoMill: #ACT?????\n??????16???\nSM3? x?70?\n\nThe Artcomplex Center of Tokyo\n??????12-9\n\n????????\n\u201CWaiting for Spring\u201D Oil\n\n#popsurrealis\u2026", "createdAt": 1642305596000}' to topic='twitter-topic'
+2022-01-16 04:00:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text CUBERS SPRING TOUR 2022
+???????????
+
+???? ??????(1?)
+????(???????)
+
+?????????????????????
+(?????????????????????)
+?????????????????????????????????????????
+2022-01-16 04:00:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1304541712950452224, "id": 1482563244904484864, "text": "CUBERS SPRING TOUR 2022\n???????????\n\n???? ??????(1?)\n????(???????)\n\n?????????????????????\n(?????????????????????)\n?????????????????????????????????????????", "createdAt": 1642305596000}' to topic='twitter-topic'
+2022-01-16 04:00:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Spring show is coming up, we?re looking for some guys for Co-Ed!!  Contact a dancer if you?re interested!!
+2022-01-16 04:00:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 921174950769254400, "id": 1482563248046104577, "text": "Spring show is coming up, we\u2019re looking for some guys for Co-Ed!!  Contact a dancer if you\u2019re interested!!", "createdAt": 1642305597000}' to topic='twitter-topic'
+2022-01-16 04:00:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @captainuwu: It's always heart-fluttering everytime I watch 'Paper Umbrella' Jungwoo... our boy of spring... the innocent first love guy?
+2022-01-16 04:00:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1447150093321191424, "id": 1482563251552792582, "text": "RT @captainuwu: It's always heart-fluttering everytime I watch 'Paper Umbrella' Jungwoo... our boy of spring... the innocent first love guy\u2026", "createdAt": 1642305598000}' to topic='twitter-topic'
+2022-01-16 04:00:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @AMISHM0M: ? introducing ?primavera? a choker inspired by trees in the spring ?? https://t.co/Y4Bsinc8FJ
+2022-01-16 04:00:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 707305325964099586, "id": 1482563255948173312, "text": "RT @AMISHM0M: ? introducing \u2018primavera\u2019 a choker inspired by trees in the spring ?? https://t.co/Y4Bsinc8FJ", "createdAt": 1642305599000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @maccha_1995: ??????2????????????????
+SPRING???????? https://t.co/eIJT0jMtWK
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1297974643, "id": 1482563259912065025, "text": "RT @maccha_1995: ??????2????????????????\nSPRING???????? https://t.co/eIJT0jMtWK", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ?Java???????
+
+???No.23782?
+?WEB?????????
+????60?
+????????
+
+?????????? https://t.co/VNQ91Ft6bJ https://t.co/IazL7twtub
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1395292252650360832, "id": 1482563259580387331, "text": "?Java???????\n\n???No.23782?\n?WEB?????????\n????60?\n????????\n\n?????????? https://t.co/VNQ91Ft6bJ https://t.co/IazL7twtub", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Tide Pods Spring Meadow 96 Ct, Laundry Detergent Pacs
+
+save $2  --> https://t.co/ZBXUCndlgE
+
+#ad https://t.co/nfuV9rEvD3
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 4161180381, "id": 1482563260457103361, "text": "Tide Pods Spring Meadow 96 Ct, Laundry Detergent Pacs\n\nsave $2  --> https://t.co/ZBXUCndlgE\n\n#ad https://t.co/nfuV9rEvD3", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @gp_pulipaka: Graph Neural Networks. #BigData #Analytics #DataScience #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #JavaScript?
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1174982905728249856, "id": 1482563260939448326, "text": "RT @gp_pulipaka: Graph Neural Networks. #BigData #Analytics #DataScience #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #JavaScript\u2026", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Freelineorlando: Jan. 15 1997 was the premiere of Lost Highway. Fred gets VHS tapes showing someone is spying on him. Before you can sa?
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 164458590, "id": 1482563260817850370, "text": "RT @Freelineorlando: Jan. 15 1997 was the premiere of Lost Highway. Fred gets VHS tapes showing someone is spying on him. Before you can sa\u2026", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Sozyuku: Biriyle uzun uzun tart??mak yerine "tamam hakl?s?n" deyip ge?mek daha mant?kl? gelmeye ba?lad?. Franz Kafka'n?n da dedi?i gibi?
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1106687402104500230, "id": 1482563261245665280, "text": "RT @Sozyuku: Biriyle uzun uzun tart??mak yerine \"tamam hakl?s?n\" deyip ge?mek daha mant?kl? gelmeye ba?lad?. Franz Kafka'n?n da dedi?i gibi\u2026", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text #146 DENIM TROUSERS
+
+SPRING-SUMMER 2022 COLLECTION ?CLASS OF 96?
+
+ONLINE STORE
+https://t.co/zMWZMe7Vsf
+
+FLAGSHIP STORE
+? 03-5708-5838
+
+#FORSOMEONE
+#22SS https://t.co/bS23QHXKMj
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1138614675438940160, "id": 1482563260905787395, "text": "#146 DENIM TROUSERS\n\nSPRING-SUMMER 2022 COLLECTION \u201CCLASS OF 96\u201D\n\nONLINE STORE\nhttps://t.co/zMWZMe7Vsf\n\nFLAGSHIP STORE\n? 03-5708-5838\n\n#FORSOMEONE\n#22SS https://t.co/bS23QHXKMj", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text This is what inspired Jodi Purnama, a man from Banjarnegara, Central Java to produce giant #chess sets since 2005, by experimenting with various shapes and materials at his home in Pondok Betung village, South Tangerang City, #Banten. #SEAToday #Catur #caturraksasa #chess #Sports https://t.co/2WYUiJkXF1
+2022-01-16 04:00:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1314830750533865472, "id": 1482563260859645957, "text": "This is what inspired Jodi Purnama, a man from Banjarnegara, Central Java to produce giant #chess sets since 2005, by experimenting with various shapes and materials at his home in Pondok Betung village, South Tangerang City, #Banten. #SEAToday #Catur #caturraksasa #chess #Sports https://t.co/2WYUiJkXF1", "createdAt": 1642305600000}' to topic='twitter-topic'
+2022-01-16 04:00:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Do you remember back in the spring?
+Every morning, birds would sing
+2022-01-16 04:00:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1408607158271348737, "id": 1482563263686754306, "text": "Do you remember back in the spring?\nEvery morning, birds would sing", "createdAt": 1642305601000}' to topic='twitter-topic'
+2022-01-16 04:00:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 2022 LPL Spring regular season, week 1, day 7, match 2
+
+Starting for @TeamWE (0-1)
+ 
+Top: Biubiu
+Jungle: View
+Mid: Shanks
+ADC: Stay
+Support: Kedaya
+
+Starting for Victory Five (0-0)
+
+Top: Invincible 
+Jungle: Karsa
+Mid: Rookie
+ADC: Photic
+Support: ppgod
+
+#WEWIN #V5WIN #LPL
+2022-01-16 04:00:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1449071774721724424, "id": 1482563264307466241, "text": "2022 LPL Spring regular season, week 1, day 7, match 2\n\nStarting for @TeamWE (0-1)\n \nTop: Biubiu\nJungle: View\nMid: Shanks\nADC: Stay\nSupport: Kedaya\n\nStarting for Victory Five (0-0)\n\nTop: Invincible \nJungle: Karsa\nMid: Rookie\nADC: Photic\nSupport: ppgod\n\n#WEWIN #V5WIN #LPL", "createdAt": 1642305601000}' to topic='twitter-topic'
+2022-01-16 04:00:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @Simon44309645 https://t.co/3C6P1t9pFv
+2022-01-16 04:00:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1458346658052198402, "id": 1482563268858499072, "text": "@Simon44309645 https://t.co/3C6P1t9pFv", "createdAt": 1642305602000}' to topic='twitter-topic'
+2022-01-16 04:00:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @SinghAj06: Learnt 2D array in Java.
+#Coding 
+#codinglife 
+#Java 
+#programming 
+#beginner 
+#learner 
+#ApnaCollege
+@AmanDhattarwal
+2022-01-16 04:00:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1426441566453862402, "id": 1482563274973581317, "text": "RT @SinghAj06: Learnt 2D array in Java.\n#Coding \n#codinglife \n#Java \n#programming \n#beginner \n#learner \n#ApnaCollege\n@AmanDhattarwal", "createdAt": 1642305604000}' to topic='twitter-topic'
+2022-01-16 04:00:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Using Apache Kafka to Build Flexible APIs (Case Study) : https://t.co/86Jor7t1FT
+
+Reflecto #EverGrow #Shiba #BUSD
+2022-01-16 04:00:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2660326016, "id": 1482563275195879426, "text": "Using Apache Kafka to Build Flexible APIs (Case Study) : https://t.co/86Jor7t1FT\n\nReflecto #EverGrow #Shiba #BUSD", "createdAt": 1642305604000}' to topic='twitter-topic'
+2022-01-16 04:00:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @cursortek: CursorTek is #selling #bulk #data of 3k plus #categories like:
+
+#plumbing #electricians #contractors #architect #dentists #r?
+2022-01-16 04:00:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1426441566453862402, "id": 1482563276580044808, "text": "RT @cursortek: CursorTek is #selling #bulk #data of 3k plus #categories like:\n\n#plumbing #electricians #contractors #architect #dentists #r\u2026", "createdAt": 1642305604000}' to topic='twitter-topic'
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @ilya_poet: ?Soul, if you think we have wandered
+enough to arrive at evening,
+shall we go into our room, close the door,
+and make a bit?
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1598174204, "id": 1482563280040349712, "text": "RT @ilya_poet: \u201CSoul, if you think we have wandered\nenough to arrive at evening,\nshall we go into our room, close the door,\nand make a bit\u2026", "createdAt": 1642305605000}' to topic='twitter-topic'
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour "Kis-My-Ft ni Aeru de Show 2022" yesterday at Shizuoka's Ecopa A?
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 204655052, "id": 1482563280128589824, "text": "RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour \"Kis-My-Ft ni Aeru de Show 2022\" yesterday at Shizuoka's Ecopa A\u2026", "createdAt": 1642305605000}' to topic='twitter-topic'
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Franz Kafka'n?n
+
+"delirmenin e?i?indeyim" dedi?i yerdeyim.
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1136039935973220353, "id": 1482563281504153604, "text": "Franz Kafka'n?n\n\n\"delirmenin e?i?indeyim\" dedi?i yerdeyim.", "createdAt": 1642305605000}' to topic='twitter-topic'
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @captainuwu: It's always heart-fluttering everytime I watch 'Paper Umbrella' Jungwoo... our boy of spring... the innocent first love guy?
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1417526399695470595, "id": 1482563281915375625, "text": "RT @captainuwu: It's always heart-fluttering everytime I watch 'Paper Umbrella' Jungwoo... our boy of spring... the innocent first love guy\u2026", "createdAt": 1642305605000}' to topic='twitter-topic'
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @prismagung: View of a park in Ciwidey, West Java, Indon  #Vegetation #Plant #Tree #Land #Outdoors #Nature #Jungle #Bush #Woodland #Fore?
+2022-01-16 04:00:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1426441566453862402, "id": 1482563283391598595, "text": "RT @prismagung: View of a park in Ciwidey, West Java, Indon  #Vegetation #Plant #Tree #Land #Outdoors #Nature #Jungle #Bush #Woodland #Fore\u2026", "createdAt": 1642305606000}' to topic='twitter-topic'
+2022-01-16 04:00:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @LynneStactia: ED Mnangagwa has DRAMA veduwe ???? after Java you wouldn?t think he was still going then BOOM ? https://t.co/sfoUkpFge2
+2022-01-16 04:00:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 82309200, "id": 1482563291977289736, "text": "RT @LynneStactia: ED Mnangagwa has DRAMA veduwe ???? after Java you wouldn\u2019t think he was still going then BOOM ? https://t.co/sfoUkpFge2", "createdAt": 1642305608000}' to topic='twitter-topic'
+2022-01-16 04:00:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @MikeMikwd: A mild winter walk at the Greenock cut yesterday- felt like a spring day- have a great weekend friends #ScotlandisNow #Storm?
+2022-01-16 04:00:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1393796815158317056, "id": 1482563292245622791, "text": "RT @MikeMikwd: A mild winter walk at the Greenock cut yesterday- felt like a spring day- have a great weekend friends #ScotlandisNow #Storm\u2026", "createdAt": 1642305608000}' to topic='twitter-topic'
+2022-01-16 04:00:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Baaaannnoo in ur presence there is freshness of early morning breeze nurturing each rose bud into a fully bloomed groomed rose there is brightness of spring daylight with everything looking clear birds chirping in their nests nightingale singing you are the most fragrant rose
+2022-01-16 04:00:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2733899108, "id": 1482563295198556162, "text": "Baaaannnoo in ur presence there is freshness of early morning breeze nurturing each rose bud into a fully bloomed groomed rose there is brightness of spring daylight with everything looking clear birds chirping in their nests nightingale singing you are the most fragrant rose", "createdAt": 1642305608000}' to topic='twitter-topic'
+2022-01-16 04:00:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ?????:12? (DIY???)
+
+???? BC-360XL ????????? FINE??????  ???? ??????...(13:00)
+
+https://t.co/PsnrZXmqv5
+2022-01-16 04:00:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1367656120739762185, "id": 1482563299061690368, "text": "?????:12? (DIY???)\n\n???? BC-360XL ????????? FINE??????  ???? ??????...(13:00)\n\nhttps://t.co/PsnrZXmqv5", "createdAt": 1642305609000}' to topic='twitter-topic'
+2022-01-16 04:00:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ?????:2? ??????PC????? (13:00)
+
+EW-052A
+
+??:-?
+
+https://t.co/ZC9psKkUDT
+2022-01-16 04:00:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1371493492640256011, "id": 1482563299979890689, "text": "?????:2? ??????PC????? (13:00)\n\nEW-052A\n\n??:-?\n\nhttps://t.co/ZC9psKkUDT", "createdAt": 1642305610000}' to topic='twitter-topic'
+2022-01-16 04:00:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ??????:3??(?????)
+
+??????X ???????????????????????? ?
+???:?????
+
+??:?6,800?
+????????(13:00)
+
+https://t.co/hegKdeTrUg
+2022-01-16 04:00:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1358806251077922816, "id": 1482563300458393602, "text": "??????:3??(?????)\n\n??????X ???????????????????????? ?\n???:?????\n\n??:?6,800?\n????????(13:00)\n\nhttps://t.co/hegKdeTrUg", "createdAt": 1642305610000}' to topic='twitter-topic'
+2022-01-16 04:00:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ???????3??(?????????)
+
+?Radeon RX 6600 MECH 2X 8G Radeon-RX-6600-MECH-2X-8G?
+???:MSI
+
+??:?55,800?
+????????(13:00)
+
+https://t.co/F446aQMuYD
+2022-01-16 04:00:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1375961552122044417, "id": 1482563301251096580, "text": "???????3??(?????????)\n\n?Radeon RX 6600 MECH 2X 8G Radeon-RX-6600-MECH-2X-8G?\n???:MSI\n\n??:?55,800?\n????????(13:00)\n\nhttps://t.co/F446aQMuYD", "createdAt": 1642305610000}' to topic='twitter-topic'
+2022-01-16 04:00:15 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @StardustLabsMC: We found another perfect seed for Minecraft 1.18! 510815684 has every single biome within 1500 blocks of spawn - and ev?
+2022-01-16 04:00:15 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1003284387650105345, "id": 1482563306263040003, "text": "RT @StardustLabsMC: We found another perfect seed for Minecraft 1.18! 510815684 has every single biome within 1500 blocks of spawn - and ev\u2026", "createdAt": 1642305611000}' to topic='twitter-topic'
+2022-01-16 04:00:16 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Woah ... you'll have to have a spring clean
+2022-01-16 04:00:16 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 24218152, "id": 1482563309492654086, "text": "Woah ... you'll have to have a spring clean", "createdAt": 1642305612000}' to topic='twitter-topic'
+2022-01-16 04:00:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @BubblesxMakeup: quick swatchhhh! ???? chanel rouge coco baume ????? 914 natural charm ?? ????????? ?????????????? ????????????? ????????
+2022-01-16 04:00:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 635473177, "id": 1482563315234897923, "text": "RT @BubblesxMakeup: quick swatchhhh! ???? chanel rouge coco baume ????? 914 natural charm ?? ????????? ?????????????? ????????????? ???????\u2026", "createdAt": 1642305613000}' to topic='twitter-topic'
+2022-01-16 04:00:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Hey PNW friends, check it out!
+2022-01-16 04:00:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1066505889518051328, "id": 1482563315234750467, "text": "Hey PNW friends, check it out!", "createdAt": 1642305613000}' to topic='twitter-topic'
+2022-01-16 04:00:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Using Apache Kafka to Build Flexible APIs (Case Study) : https://t.co/ZOkDQhvfxz
+
+Python #IDE #Cina #IDE #Cina #cl?ster #asociaciones #componentes #Arduino #IDE #hackaday
+2022-01-16 04:00:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 877219196513378305, "id": 1482563315595452417, "text": "Using Apache Kafka to Build Flexible APIs (Case Study) : https://t.co/ZOkDQhvfxz\n\nPython #IDE #Cina #IDE #Cina #cl?ster #asociaciones #componentes #Arduino #IDE #hackaday", "createdAt": 1642305613000}' to topic='twitter-topic'
+2022-01-16 04:00:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text C++?C#?.net??????????Java????6????????????????50???70??????????https://t.co/lUmiORLcjT
+2022-01-16 04:00:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 361627071, "id": 1482563321761255424, "text": "C++?C#?.net??????????Java????6????????????????50???70??????????https://t.co/lUmiORLcjT", "createdAt": 1642305615000}' to topic='twitter-topic'
+2022-01-16 04:00:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text As spring coming, Event for the Japanese people to look forward to
+?
+?
+One Thousand Cherry Trees
+https://t.co/kod6a1a1jx #cherry-blossom
+2022-01-16 04:00:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 185578858, "id": 1482563331257176077, "text": "As spring coming, Event for the Japanese people to look forward to\n?\n?\nOne Thousand Cherry Trees\nhttps://t.co/kod6a1a1jx #cherry-blossom", "createdAt": 1642305617000}' to topic='twitter-topic'
+2022-01-16 04:00:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @shru_koo probably knock off spring day photocards bc i refused to buy multiple albums
+2022-01-16 04:00:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 142478963, "id": 1482563335094738945, "text": "@shru_koo probably knock off spring day photocards bc i refused to buy multiple albums", "createdAt": 1642305618000}' to topic='twitter-topic'
+2022-01-16 04:00:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text \\Open positions in Columbus OH\\
+Good evening my LI friends and Colleagues! We have some open positions we are looking to fill here in Columbus OH! Java Dev, Robotic Programmer, DBA! If you have an interest in learning more send your resume to careers@stealthentry.com !!! https://t.co/wKoW7HJ5Y8
+2022-01-16 04:00:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 46480022, "id": 1482563340228612098, "text": "\\\\Open positions in Columbus OH\\\\\nGood evening my LI friends and Colleagues! We have some open positions we are looking to fill here in Columbus OH! Java Dev, Robotic Programmer, DBA! If you have an interest in learning more send your resume to careers@stealthentry.com !!! https://t.co/wKoW7HJ5Y8", "createdAt": 1642305619000}' to topic='twitter-topic'
+2022-01-16 04:00:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @tiffy806 My beautiful bestie! K said he wants to go see you. Let's plan a trip to hang out this spring. Tell D hi from us. Love you! ??
+2022-01-16 04:00:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1441266103850704896, "id": 1482563341621071872, "text": "@tiffy806 My beautiful bestie! K said he wants to go see you. Let's plan a trip to hang out this spring. Tell D hi from us. Love you! ??", "createdAt": 1642305619000}' to topic='twitter-topic'
+2022-01-16 04:00:24 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @kwonjaehyuk_: ? what is that?
+? it's a spring poetry
+? can you read it?
+? err? let's ask your father https://t.co/UTDHHdnhaZ
+2022-01-16 04:00:24 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 206101468, "id": 1482563346507636736, "text": "RT @kwonjaehyuk_: ? what is that?\n? it's a spring poetry\n? can you read it?\n? err\u2026 let's ask your father https://t.co/UTDHHdnhaZ", "createdAt": 1642305621000}' to topic='twitter-topic'
+2022-01-16 04:00:24 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour "Kis-My-Ft ni Aeru de Show 2022" yesterday at Shizuoka's Ecopa A?
+2022-01-16 04:00:24 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1413166430552395776, "id": 1482563346822234112, "text": "RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour \"Kis-My-Ft ni Aeru de Show 2022\" yesterday at Shizuoka's Ecopa A\u2026", "createdAt": 1642305621000}' to topic='twitter-topic'
+2022-01-16 04:00:25 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @zhang_heqing: Rime at Wusong Island
+Snow is nature's generous gift to Jilin, and it is the punchline of Jilin's winter tourism. In the?
+2022-01-16 04:00:25 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1003585113714593794, "id": 1482563349757890561, "text": "RT @zhang_heqing: Rime at Wusong Island\nSnow is nature's generous gift to Jilin, and it is the punchline of Jilin's winter tourism. In the\u2026", "createdAt": 1642305621000}' to topic='twitter-topic'
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Nann25660354: Buddhist Monks in Myanmar sent prayers for the immediate restoration of democracy and for the fallen heroes of Spring Rev?
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1369184770828115968, "id": 1482563352325148677, "text": "RT @Nann25660354: Buddhist Monks in Myanmar sent prayers for the immediate restoration of democracy and for the fallen heroes of Spring Rev\u2026", "createdAt": 1642305622000}' to topic='twitter-topic'
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @umidimoment @gokhanozbek @Julibettr @ZkusagiZ Kafka?
+Hicaz
+Filistin Kanal cepheleri kaybedilmi?.
+Ztn ma?lupsun
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1055559084953518080, "id": 1482563352408862722, "text": "@umidimoment @gokhanozbek @Julibettr @ZkusagiZ Kafka?\nHicaz\nFilistin Kanal cepheleri kaybedilmi?.\nZtn ma?lupsun", "createdAt": 1642305622000}' to topic='twitter-topic'
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @abikoshinonkai: ????????????
+?Hyaku-G?
+??????Hyaku-G Tour Vol.2
+2022 Spring
+#???? 
+?????
+https://t.co/hrjIXuF7T5
+
+???Hyaku?????????????
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1124341585364148224, "id": 1482563352995917830, "text": "RT @abikoshinonkai: ????????????\n?Hyaku-G?\n??????Hyaku-G Tour Vol.2\n2022 Spring\n#???? \n?????\nhttps://t.co/hrjIXuF7T5\n\n???Hyaku????????????\u2026", "createdAt": 1642305622000}' to topic='twitter-topic'
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Pjsplanett: Hay guys, Im just tryna return back for spring semester and its just been hard trying to get to funds from school, anything?
+2022-01-16 04:00:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 3310045450, "id": 1482563354170437633, "text": "RT @Pjsplanett: Hay guys, Im just tryna return back for spring semester and its just been hard trying to get to funds from school, anything\u2026", "createdAt": 1642305622000}' to topic='twitter-topic'
+2022-01-16 04:00:27 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Congratulations to @LVC_esports CSGO team on winning our $500 Steam Cash giveaway?
+
+Keep an eye out for more chances to win during NACE Starleague?s Spring 22 registration period? https://t.co/G2TKc0ROZb
+2022-01-16 04:00:27 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 111635070, "id": 1482563356267585541, "text": "Congratulations to @LVC_esports CSGO team on winning our $500 Steam Cash giveaway?\n\nKeep an eye out for more chances to win during NACE Starleague\u2019s Spring 22 registration period? https://t.co/G2TKc0ROZb", "createdAt": 1642305623000}' to topic='twitter-topic'
+2022-01-16 04:00:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text yung price niya ? every buyer's dream
+2022-01-16 04:00:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1425428659188342784, "id": 1482563362697269252, "text": "yung price niya ? every buyer's dream", "createdAt": 1642305625000}' to topic='twitter-topic'
+2022-01-16 04:00:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @DataScienceDojo: ? A useful cheat sheet for Java script array! 
+Source: @SurakshaSogaria
+
+#JavaScript #CheatSheet #DataScience https://?
+2022-01-16 04:00:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1204729590658347008, "id": 1482563364580732929, "text": "RT @DataScienceDojo: ? A useful cheat sheet for Java script array! \nSource: @SurakshaSogaria\n\n#JavaScript #CheatSheet #DataScience https://\u2026", "createdAt": 1642305625000}' to topic='twitter-topic'
+2022-01-16 04:00:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @LaAnnaMarie: So?meet my first epic fantasy novel. It?s really trans. And really queer?
+
+And meet mi marido/co-author. Who is also rathe?
+2022-01-16 04:00:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 928616882881613824, "id": 1482563366493302786, "text": "RT @LaAnnaMarie: So\u2026meet my first epic fantasy novel. It\u2019s really trans. And really queer?\n\nAnd meet mi marido/co-author. Who is also rathe\u2026", "createdAt": 1642305625000}' to topic='twitter-topic'
+2022-01-16 04:00:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @loookatmeimkiad: the fabric that i?m using for my new swimsuits for spring/summer is made from recycled water bottles :)
+2022-01-16 04:00:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2915108791, "id": 1482563366669500420, "text": "RT @loookatmeimkiad: the fabric that i\u2019m using for my new swimsuits for spring/summer is made from recycled water bottles :)", "createdAt": 1642305625000}' to topic='twitter-topic'
+2022-01-16 04:00:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @toylandhobbymod: airfix 1/72 A04017 Bristol Blenheim MkIV Fighter Pre-order | Expected Spring 2022 158 Parts Included 2 Skill Level 2 S?
+2022-01-16 04:00:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 749080528955985920, "id": 1482563375666429954, "text": "RT @toylandhobbymod: airfix 1/72 A04017 Bristol Blenheim MkIV Fighter Pre-order | Expected Spring 2022 158 Parts Included 2 Skill Level 2 S\u2026", "createdAt": 1642305628000}' to topic='twitter-topic'
+2022-01-16 04:00:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @ElliotFreeman_: winter break in college will really have you forgetting spring semester exists
+2022-01-16 04:00:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1031317127947603969, "id": 1482563379252367362, "text": "RT @ElliotFreeman_: winter break in college will really have you forgetting spring semester exists", "createdAt": 1642305628000}' to topic='twitter-topic'
+2022-01-16 04:00:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @btsxtroye: BTS Spring Day Theory :- A thread https://t.co/INcs0c6gSw
+2022-01-16 04:00:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1432273915091447809, "id": 1482563380997410818, "text": "RT @btsxtroye: BTS Spring Day Theory :- A thread https://t.co/INcs0c6gSw", "createdAt": 1642305629000}' to topic='twitter-topic'
+2022-01-16 04:00:34 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ????Java????????????1?????
+??????????????????????????????????????
+
+???????VTuber?????k((
+2022-01-16 04:00:34 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1008645496452202496, "id": 1482563385455935489, "text": "????Java????????????1?????\n??????????????????????????????????????\n\n???????VTuber?????k((", "createdAt": 1642305630000}' to topic='twitter-topic'
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Pjsplanett: Hay guys, Im just tryna return back for spring semester and its just been hard trying to get to funds from school, anything?
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 765947838572421121, "id": 1482563389360680961, "text": "RT @Pjsplanett: Hay guys, Im just tryna return back for spring semester and its just been hard trying to get to funds from school, anything\u2026", "createdAt": 1642305631000}' to topic='twitter-topic'
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Now Playing The Vernon Spring - Spiral #thevernonspring
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1577984058, "id": 1482563390300164107, "text": "Now Playing The Vernon Spring - Spiral #thevernonspring", "createdAt": 1642305631000}' to topic='twitter-topic'
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text yoongi's verse in spring day is really just wow https://t.co/ryXvCJc1FF
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1219877107897008129, "id": 1482563392724299777, "text": "yoongi's verse in spring day is really just wow https://t.co/ryXvCJc1FF", "createdAt": 1642305632000}' to topic='twitter-topic'
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @bottegalolita: Sultry Virgin Spring 2022 https://t.co/xRn9TglciZ
+2022-01-16 04:00:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1469099062028767232, "id": 1482563392775004162, "text": "RT @bottegalolita: Sultry Virgin Spring 2022 https://t.co/xRn9TglciZ", "createdAt": 1642305632000}' to topic='twitter-topic'
+2022-01-16 04:00:37 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @wrkhs: backstage @ versace spring 2022 https://t.co/YXlEWdGNZh
+2022-01-16 04:00:37 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2302782922, "id": 1482563399628345348, "text": "RT @wrkhs: backstage @ versace spring 2022 https://t.co/YXlEWdGNZh", "createdAt": 1642305633000}' to topic='twitter-topic'
+2022-01-16 04:00:37 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @artistlevitan: Spring in Italy, 1890 #levitan #isaaclevitan https://t.co/pv0RjA3Ycr
+2022-01-16 04:00:37 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2489043751, "id": 1482563400525697025, "text": "RT @artistlevitan: Spring in Italy, 1890 #levitan #isaaclevitan https://t.co/pv0RjA3Ycr", "createdAt": 1642305634000}' to topic='twitter-topic'
+2022-01-16 04:00:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @HYBE_MERCH: [December 2021] Newly Launched Licensed Products!
+BTS @collectsideshow Spring Day Fine Art Print by Ian MacDonald available?
+2022-01-16 04:00:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1296991809487409155, "id": 1482563403852009477, "text": "RT @HYBE_MERCH: [December 2021] Newly Launched Licensed Products!\nBTS @collectsideshow Spring Day Fine Art Print by Ian MacDonald available\u2026", "createdAt": 1642305634000}' to topic='twitter-topic'
+2022-01-16 04:00:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text GUYS IF YOU?RE A RECENT JUNG HAEIN FAN WATCH ONE SPRING NIGHT ? UR WELCOME
+2022-01-16 04:00:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1406810590358556674, "id": 1482563411208654850, "text": "GUYS IF YOU\u2019RE A RECENT JUNG HAEIN FAN WATCH ONE SPRING NIGHT ? UR WELCOME", "createdAt": 1642305636000}' to topic='twitter-topic'
+2022-01-16 04:00:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @abikoshinonkai: ????????????
+?Hyaku-G?
+??????Hyaku-G Tour Vol.2
+2022 Spring
+#???? 
+?????
+https://t.co/hrjIXuF7T5
+
+???Hyaku?????????????
+2022-01-16 04:00:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 956927004313448449, "id": 1482563415231320073, "text": "RT @abikoshinonkai: ????????????\n?Hyaku-G?\n??????Hyaku-G Tour Vol.2\n2022 Spring\n#???? \n?????\nhttps://t.co/hrjIXuF7T5\n\n???Hyaku????????????\u2026", "createdAt": 1642305637000}' to topic='twitter-topic'
+2022-01-16 04:00:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @cslesportsgg: Congratulations to @LVC_esports CSGO team on winning our $500 Steam Cash giveaway?
+
+Keep an eye out for more chances to w?
+2022-01-16 04:00:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 824089291, "id": 1482563417793863683, "text": "RT @cslesportsgg: Congratulations to @LVC_esports CSGO team on winning our $500 Steam Cash giveaway?\n\nKeep an eye out for more chances to w\u2026", "createdAt": 1642305638000}' to topic='twitter-topic'
+2022-01-16 04:00:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @The_PurpleHorse: Green with Envy
+
+These buds long for spring!
+
+#plants #outdoors #winter #myphoto #originalcontent #photography #nature?
+2022-01-16 04:00:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1478727774944727042, "id": 1482563431505231873, "text": "RT @The_PurpleHorse: Green with Envy\n\nThese buds long for spring!\n\n#plants #outdoors #winter #myphoto #originalcontent #photography #nature\u2026", "createdAt": 1642305641000}' to topic='twitter-topic'
+2022-01-16 04:00:46 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @___ENDPOINT: https://t.co/o3p5mzd3lI https://t.co/4IA9tMr9OT
+2022-01-16 04:00:46 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1587542101, "id": 1482563435032461319, "text": "RT @___ENDPOINT: https://t.co/o3p5mzd3lI https://t.co/4IA9tMr9OT", "createdAt": 1642305642000}' to topic='twitter-topic'
+2022-01-16 04:00:46 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ???????????????????1?????/???
+
+https://t.co/Oz42HXBI5R ##PHP,#Laravel,#Java,#?????,#?????
+2022-01-16 04:00:46 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 4485056533, "id": 1482563437083324419, "text": "???????????????????1?????/???\n\nhttps://t.co/Oz42HXBI5R ##PHP,#Laravel,#Java,#?????,#?????", "createdAt": 1642305642000}' to topic='twitter-topic'
+2022-01-16 04:00:46 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @nyaaaaon22 java??????????
+2022-01-16 04:00:46 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1396102774350258183, "id": 1482563438992068616, "text": "@nyaaaaon22 java??????????", "createdAt": 1642305643000}' to topic='twitter-topic'
+2022-01-16 04:00:48 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @rafrasenberg age 11:
+Java
+Databases
+Version control systems
+
+age 13:
+Linux
+android developing
+
+age 16:
+Data structures
+Python
+Docker
+
+age 20:
+Machine Learning
+Natural languages processing
+Object detection
+
+age 21:
+Django
+Microservices
+Flask
+JS
+2022-01-16 04:00:48 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 892494835877167105, "id": 1482563444092153867, "text": "@rafrasenberg age 11:\nJava\nDatabases\nVersion control systems\n\nage 13:\nLinux\nandroid developing\n\nage 16:\nData structures\nPython\nDocker\n\nage 20:\nMachine Learning\nNatural languages processing\nObject detection\n\nage 21:\nDjango\nMicroservices\nFlask\nJS", "createdAt": 1642305644000}' to topic='twitter-topic'
+2022-01-16 04:00:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text hands down its spring
+2022-01-16 04:00:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 939687388032503808, "id": 1482563453160144897, "text": "hands down its spring", "createdAt": 1642305646000}' to topic='twitter-topic'
+2022-01-16 04:00:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @TucsonHCD @pimaarizona @cityoftucson @megmyscofski @azpublicmedia This disgusting doc was created as Mayor of Tucson held the Seat in Ward 1
+https://t.co/3M54sIYr5V
+2022-01-16 04:00:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1482549528595087362, "id": 1482563460193918978, "text": "@TucsonHCD @pimaarizona @cityoftucson @megmyscofski @azpublicmedia This disgusting doc was created as Mayor of Tucson held the Seat in Ward 1\nhttps://t.co/3M54sIYr5V", "createdAt": 1642305648000}' to topic='twitter-topic'
+2022-01-16 04:00:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @JohnCunnington5: Friendly reminder: If you are planning any trips for Spring Break, please keep that off of Social Media. It is hard to?
+2022-01-16 04:00:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1166166733809496066, "id": 1482563460462485504, "text": "RT @JohnCunnington5: Friendly reminder: If you are planning any trips for Spring Break, please keep that off of Social Media. It is hard to\u2026", "createdAt": 1642305648000}' to topic='twitter-topic'
+2022-01-16 04:00:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text these are dope as fuck
+https://t.co/FVXYzerDPI
+2022-01-16 04:00:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1126485058456567808, "id": 1482563462622597120, "text": "these are dope as fuck\nhttps://t.co/FVXYzerDPI", "createdAt": 1642305648000}' to topic='twitter-topic'
+2022-01-16 04:00:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @captainuwu: It's always heart-fluttering everytime I watch 'Paper Umbrella' Jungwoo... our boy of spring... the innocent first love guy?
+2022-01-16 04:00:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1432551855368769542, "id": 1482563464493076481, "text": "RT @captainuwu: It's always heart-fluttering everytime I watch 'Paper Umbrella' Jungwoo... our boy of spring... the innocent first love guy\u2026", "createdAt": 1642305649000}' to topic='twitter-topic'
+2022-01-16 04:00:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @sugadboy @BTS_twt Spring day , es hermosa 
+
+#KOREAQUEST_JHOPE
+#BTS
+2022-01-16 04:00:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1260691982600544263, "id": 1482563466661666816, "text": "@sugadboy @BTS_twt Spring day , es hermosa \n\n#KOREAQUEST_JHOPE\n#BTS", "createdAt": 1642305649000}' to topic='twitter-topic'
+2022-01-16 04:00:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @ykcr_fn ????java????
+2022-01-16 04:00:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 777089654818344960, "id": 1482563468423462912, "text": "@ykcr_fn ????java????", "createdAt": 1642305650000}' to topic='twitter-topic'
+2022-01-16 04:00:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Closer relations are upending politics in the Middle East?as the U.S. disengages from the region and leaders mark the end of the Arab Spring https://t.co/MlfokEqkZh
+2022-01-16 04:00:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 67358777, "id": 1482563475906121730, "text": "Closer relations are upending politics in the Middle East\u2014as the U.S. disengages from the region and leaders mark the end of the Arab Spring https://t.co/MlfokEqkZh", "createdAt": 1642305652000}' to topic='twitter-topic'
+2022-01-16 04:00:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Latest Top #Java Technology News! https://t.co/V4pKGM67gK #f Thanks to @vlad_mihalcea @Udemy_Coupons1 @BrianVerm #java #python
+2022-01-16 04:00:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 6987882, "id": 1482563479307497472, "text": "Latest Top #Java Technology News! https://t.co/V4pKGM67gK #f Thanks to @vlad_mihalcea @Udemy_Coupons1 @BrianVerm #java #python", "createdAt": 1642305652000}' to topic='twitter-topic'
+2022-01-16 04:00:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @_Dark_Kent_: @1900Canesville is looking for a Spring Game. If interested please DM or email me at pollardbd@gm.sbac.edu. Thanks!
+2022-01-16 04:00:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 312378511, "id": 1482563481723359232, "text": "RT @_Dark_Kent_: @1900Canesville is looking for a Spring Game. If interested please DM or email me at pollardbd@gm.sbac.edu. Thanks!", "createdAt": 1642305653000}' to topic='twitter-topic'
+2022-01-16 04:00:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @drainbead When I saw the score, your joy did spring immediately to mind.
+2022-01-16 04:00:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 798556, "id": 1482563484403523589, "text": "@drainbead When I saw the score, your joy did spring immediately to mind.", "createdAt": 1642305654000}' to topic='twitter-topic'
+2022-01-16 04:01:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @btsxtroye: BTS Spring Day Theory :- A thread https://t.co/INcs0c6gSw
+2022-01-16 04:01:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1477281706512158720, "id": 1482563496613138435, "text": "RT @btsxtroye: BTS Spring Day Theory :- A thread https://t.co/INcs0c6gSw", "createdAt": 1642305656000}' to topic='twitter-topic'
+2022-01-16 04:01:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @art4eva_: "
+Mentally change winter to spring and fall in love." ~ ?????? ??????? https://t.co/7ivAGRFvx7
+2022-01-16 04:01:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 55556716, "id": 1482563497229787136, "text": "RT @art4eva_: \"\nMentally change winter to spring and fall in love.\" ~ ?????? ??????? https://t.co/7ivAGRFvx7", "createdAt": 1642305657000}' to topic='twitter-topic'
+2022-01-16 04:01:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @angsuman: Latest Top #Java Technology News! https://t.co/V4pKGM67gK #f Thanks to @vlad_mihalcea @Udemy_Coupons1 @BrianVerm #java #python
+2022-01-16 04:01:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 603357971, "id": 1482563501193314313, "text": "RT @angsuman: Latest Top #Java Technology News! https://t.co/V4pKGM67gK #f Thanks to @vlad_mihalcea @Udemy_Coupons1 @BrianVerm #java #python", "createdAt": 1642305658000}' to topic='twitter-topic'
+2022-01-16 04:01:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ?Spiral? by The Vernon Spring https://t.co/2QkUI64N6a #nowplaying #6music
+2022-01-16 04:01:02 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 989135184, "id": 1482563503680544769, "text": "\u201CSpiral\u201D by The Vernon Spring https://t.co/2QkUI64N6a #nowplaying #6music", "createdAt": 1642305658000}' to topic='twitter-topic'
+2022-01-16 04:01:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour "Kis-My-Ft ni Aeru de Show 2022" yesterday at Shizuoka's Ecopa A?
+2022-01-16 04:01:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2543082169, "id": 1482563525587320835, "text": "RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour \"Kis-My-Ft ni Aeru de Show 2022\" yesterday at Shizuoka's Ecopa A\u2026", "createdAt": 1642305663000}' to topic='twitter-topic'
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @hfractal_osaka: NEW ARRIVAL
+
+TENDER PERSON
+
+2022 SPRING SUMMER COLLECTION
+?AMBIVALENCE / BALANCE?
+
+[PRODUCT INFORMATION]
+
+?MUSUBI SHIRT?
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1289378145456361473, "id": 1482563527676428290, "text": "RT @hfractal_osaka: NEW ARRIVAL\n\nTENDER PERSON\n\n2022 SPRING SUMMER COLLECTION\n?AMBIVALENCE / BALANCE?\n\n[PRODUCT INFORMATION]\n\n?MUSUBI SHIRT\u2026", "createdAt": 1642305664000}' to topic='twitter-topic'
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text #Firstplay: "Spiral" by The Vernon Spring on BBC Radio 6 Music (#BBC6Music)
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 3247144948, "id": 1482563527814565890, "text": "#Firstplay: \"Spiral\" by The Vernon Spring on BBC Radio 6 Music (#BBC6Music)", "createdAt": 1642305664000}' to topic='twitter-topic'
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Will MLB owners and players reach a deal to end the lockout before losing time in spring training and regular-season games? https://t.co/w9uvUZhn8V
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 14267944, "id": 1482563528154398729, "text": "Will MLB owners and players reach a deal to end the lockout before losing time in spring training and regular-season games? https://t.co/w9uvUZhn8V", "createdAt": 1642305664000}' to topic='twitter-topic'
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @maccha_1995: ??????2????????????????
+SPRING???????? https://t.co/eIJT0jMtWK
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1339525605486825472, "id": 1482563528963739653, "text": "RT @maccha_1995: ??????2????????????????\nSPRING???????? https://t.co/eIJT0jMtWK", "createdAt": 1642305664000}' to topic='twitter-topic'
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text stop I was about to see spring day performance from my concert and right when the first note played I started crying I can?t watch it I?m not ready
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 763061071024316416, "id": 1482563529341239301, "text": "stop I was about to see spring day performance from my concert and right when the first note played I started crying I can\u2019t watch it I\u2019m not ready", "createdAt": 1642305664000}' to topic='twitter-topic'
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Will MLB owners and players reach a deal to end the lockout before losing time in spring training and regular-season games? https://t.co/9W3JegBLVg #Guardians
+2022-01-16 04:01:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 29750438, "id": 1482563530394058762, "text": "Will MLB owners and players reach a deal to end the lockout before losing time in spring training and regular-season games? https://t.co/9W3JegBLVg #Guardians", "createdAt": 1642305665000}' to topic='twitter-topic'
+2022-01-16 04:01:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @AdamJBerry: This was shot in the DEAD ASS HEAT of the summer.. it was boiling? #KindredSpirits
+2022-01-16 04:01:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1465465662017470468, "id": 1482563533032230912, "text": "RT @AdamJBerry: This was shot in the DEAD ASS HEAT of the summer.. it was boiling\u2026 #KindredSpirits", "createdAt": 1642305665000}' to topic='twitter-topic'
+2022-01-16 04:01:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @hfractal_osaka: MIRAGE SHOP at H>FRACTAL OSAKA
+2022.1.15.SAT-1.16.SUN
+
+?2022 Spring/Summer Collection ?BLUE? Pre Order
+?2021 Autumn/Win?
+2022-01-16 04:01:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1289378145456361473, "id": 1482563537646276610, "text": "RT @hfractal_osaka: MIRAGE SHOP at H>FRACTAL OSAKA\n2022.1.15.SAT-1.16.SUN\n\n?2022 Spring/Summer Collection \u201CBLUE\u201D Pre Order\n?2021 Autumn/Win\u2026", "createdAt": 1642305666000}' to topic='twitter-topic'
+2022-01-16 04:01:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @hughlaurie: Proud to report that Why Didn?t They Ask Evans? is finally delivered.  Triplets, weighing a strapping 58 minutes each.  Ava?
+2022-01-16 04:01:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2162192066, "id": 1482563539898408964, "text": "RT @hughlaurie: Proud to report that Why Didn\u2019t They Ask Evans? is finally delivered.  Triplets, weighing a strapping 58 minutes each.  Ava\u2026", "createdAt": 1642305667000}' to topic='twitter-topic'
+2022-01-16 04:01:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @GulfstreamPark: Moms Moon fends off La Maquina to spring a huge surprise in the nightcap, @JaramilloJockey in the saddle for trainer Ge?
+2022-01-16 04:01:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 813962600, "id": 1482563545711718405, "text": "RT @GulfstreamPark: Moms Moon fends off La Maquina to spring a huge surprise in the nightcap, @JaramilloJockey in the saddle for trainer Ge\u2026", "createdAt": 1642305668000}' to topic='twitter-topic'
+2022-01-16 04:01:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @TucsonHCD This disgusting doc was created as Mayor of Tucson held the Seat in Ward 1
+https://t.co/3M54sIYr5V
+2022-01-16 04:01:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1482549528595087362, "id": 1482563555358502915, "text": "@TucsonHCD This disgusting doc was created as Mayor of Tucson held the Seat in Ward 1\nhttps://t.co/3M54sIYr5V", "createdAt": 1642305670000}' to topic='twitter-topic'
+2022-01-16 04:01:15 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @AnthonyDeVito I think when people are dealing with abstraction it gets weird. When the old lady who lives across the street needs her walk shoveled or a casserole or some other very specific thing, people can spring into action.
+2022-01-16 04:01:15 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 373015208, "id": 1482563557132754944, "text": "@AnthonyDeVito I think when people are dealing with abstraction it gets weird. When the old lady who lives across the street needs her walk shoveled or a casserole or some other very specific thing, people can spring into action.", "createdAt": 1642305671000}' to topic='twitter-topic'
+2022-01-16 04:01:15 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @patrick_oshag My son started with an Indian tutor remotely when he was 8. Now he is 12 and can take on College kids learning Java/sql.
+2022-01-16 04:01:15 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1372549230, "id": 1482563558248312836, "text": "@patrick_oshag My son started with an Indian tutor remotely when he was 8. Now he is 12 and can take on College kids learning Java/sql.", "createdAt": 1642305671000}' to topic='twitter-topic'
+2022-01-16 04:01:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @buffbeerleague: Nearly two years since closing their original location in Lewiston, @BrewedBottled will open up their new shop (442 Cen?
+2022-01-16 04:01:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 21574752, "id": 1482563575076073472, "text": "RT @buffbeerleague: Nearly two years since closing their original location in Lewiston, @BrewedBottled will open up their new shop (442 Cen\u2026", "createdAt": 1642305675000}' to topic='twitter-topic'
+2022-01-16 04:01:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @sandricoprovo Its another fancy word for microservices
+2022-01-16 04:01:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1481115952876081155, "id": 1482563584949428232, "text": "@sandricoprovo Its another fancy word for microservices", "createdAt": 1642305678000}' to topic='twitter-topic'
+2022-01-16 04:01:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @DoomsdaysCW: Opposition pushes back Tepco?s contaminated water discharge
+"Chair of the NRA commented it is becoming unrealistic to star?
+2022-01-16 04:01:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2218836026, "id": 1482563587327541252, "text": "RT @DoomsdaysCW: Opposition pushes back Tepco\u2019s contaminated water discharge\n\"Chair of the NRA commented it is becoming unrealistic to star\u2026", "createdAt": 1642305678000}' to topic='twitter-topic'
+2022-01-16 04:01:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Hand sanitizer gel - Nuvo - 50ml
+
+varian: Spring Nature
+e.d: sekitar Sept 2023
+sisa stok: 8 botol
+
+harga: @  Rp 4ribu
+
+siap COD area Jogja kota, Bantul & Sleman dekat2 RR. https://t.co/lK3I5QLYer
+2022-01-16 04:01:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 600842663, "id": 1482563586405048322, "text": "Hand sanitizer gel - Nuvo - 50ml\n\nvarian: Spring Nature\ne.d: sekitar Sept 2023\nsisa stok: 8 botol\n\nharga: @  Rp 4ribu\n\nsiap COD area Jogja kota, Bantul & Sleman dekat2 RR. https://t.co/lK3I5QLYer", "createdAt": 1642305678000}' to topic='twitter-topic'
+2022-01-16 04:01:25 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Pebblebrook junior forward Jaiun Simon?s (@jaiun3) recruitment is going to skyrocket this spring. Incredibly versatile, high motor, always productive. His game continues to evolve and improve. He?s easily been one of the eye openers in the Peach this year. @PBrookhoops @gewj2391
+2022-01-16 04:01:25 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 727517502893379587, "id": 1482563600971710466, "text": "Pebblebrook junior forward Jaiun Simon\u2019s (@jaiun3) recruitment is going to skyrocket this spring. Incredibly versatile, high motor, always productive. His game continues to evolve and improve. He\u2019s easily been one of the eye openers in the Peach this year. @PBrookhoops @gewj2391", "createdAt": 1642305681000}' to topic='twitter-topic'
+2022-01-16 04:01:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Around the Spring Festival every year, there are folk art performances such as dragon dance in #Zhengzhou, #China. #goodmorning #FolloMe https://t.co/cQyBH7fnoZ
+2022-01-16 04:01:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1376140251312254981, "id": 1482563604473958404, "text": "Around the Spring Festival every year, there are folk art performances such as dragon dance in #Zhengzhou, #China. #goodmorning #FolloMe https://t.co/cQyBH7fnoZ", "createdAt": 1642305682000}' to topic='twitter-topic'
+2022-01-16 04:01:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @taegisgod @BTS_twt Spring day
+
+#KOREAQUEST_JHOPE | @BTS_twt
+2022-01-16 04:01:29 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1407100728988995593, "id": 1482563617211830272, "text": "@taegisgod @BTS_twt Spring day\n\n#KOREAQUEST_JHOPE | @BTS_twt", "createdAt": 1642305685000}' to topic='twitter-topic'
+2022-01-16 04:01:30 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Hey folks 
+Once again #bugbounty started but after a 3,4 months i need to rewise so started with #xss I generally don?t tweet things which i do but yesterday i joined @kunalstwt space he always said that learn in public so here we go
+Btw @kunalstwt #Java #DSA bootcamp is awsm
+2022-01-16 04:01:30 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 954313033160867841, "id": 1482563622140522499, "text": "Hey folks \nOnce again #bugbounty started but after a 3,4 months i need to rewise so started with #xss I generally don\u2019t tweet things which i do but yesterday i joined @kunalstwt space he always said that learn in public so here we go\nBtw @kunalstwt #Java #DSA bootcamp is awsm", "createdAt": 1642305686000}' to topic='twitter-topic'
+2022-01-16 04:01:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @l0rd_luc1f3r: Hey folks 
+Once again #bugbounty started but after a 3,4 months i need to rewise so started with #xss I generally don?t t?
+2022-01-16 04:01:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1423655520196435969, "id": 1482563626154221573, "text": "RT @l0rd_luc1f3r: Hey folks \nOnce again #bugbounty started but after a 3,4 months i need to rewise so started with #xss I generally don\u2019t t\u2026", "createdAt": 1642305687000}' to topic='twitter-topic'
+2022-01-16 04:01:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Pjsplanett: Hay guys, Im just tryna return back for spring semester and its just been hard trying to get to funds from school, anything?
+2022-01-16 04:01:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 344372150, "id": 1482563626653392902, "text": "RT @Pjsplanett: Hay guys, Im just tryna return back for spring semester and its just been hard trying to get to funds from school, anything\u2026", "createdAt": 1642305687000}' to topic='twitter-topic'
+2022-01-16 04:01:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @DataScienceDojo: ? A useful cheat sheet for Java script array! 
+Source: @SurakshaSogaria
+
+#JavaScript #CheatSheet #DataScience https://?
+2022-01-16 04:01:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1268500317500391426, "id": 1482563630688313348, "text": "RT @DataScienceDojo: ? A useful cheat sheet for Java script array! \nSource: @SurakshaSogaria\n\n#JavaScript #CheatSheet #DataScience https://\u2026", "createdAt": 1642305688000}' to topic='twitter-topic'
+2022-01-16 04:01:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I don?t need NO more clothes. Only shoes. But I just found a new site that has ALL the cute stuff for the gurraahhhs ?
+
+I?m gonna wait & do my spring haul and blow y?all away. Omg ?
+2022-01-16 04:01:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 234596179, "id": 1482563634228338688, "text": "I don\u2019t need NO more clothes. Only shoes. But I just found a new site that has ALL the cute stuff for the gurraahhhs ?\n\nI\u2019m gonna wait & do my spring haul and blow y\u2019all away. Omg ?", "createdAt": 1642305689000}' to topic='twitter-topic'
+2022-01-16 04:01:34 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @SgtPepper1710 Poor Guy!!  Couldn?t even spring for a whole dozen!!
+2022-01-16 04:01:34 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1349858602144686081, "id": 1482563638523318273, "text": "@SgtPepper1710 Poor Guy!!  Couldn\u2019t even spring for a whole dozen!!", "createdAt": 1642305690000}' to topic='twitter-topic'
+2022-01-16 04:01:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @dreaming1209: #?????
+spring is coming.
+#?? #??? #minho https://t.co/7hfCdfUamE
+2022-01-16 04:01:40 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1266422357402492931, "id": 1482563661973622788, "text": "RT @dreaming1209: #?????\nspring is coming.\n#?? #??? #minho https://t.co/7hfCdfUamE", "createdAt": 1642305696000}' to topic='twitter-topic'
+2022-01-16 04:01:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text baca teori ttng lagu bangtan walaupun udh tau adalah candu, berkali kali baca ga bkl pernah bosan? krna sebanyak itu teorinya ga cuman 1 doang
+2022-01-16 04:01:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1266242519806828547, "id": 1482563665513820160, "text": "baca teori ttng lagu bangtan walaupun udh tau adalah candu, berkali kali baca ga bkl pernah bosan? krna sebanyak itu teorinya ga cuman 1 doang", "createdAt": 1642305697000}' to topic='twitter-topic'
+2022-01-16 04:01:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Where_Zhengzhou: Around the Spring Festival every year, there are folk art performances such as dragon dance in #Zhengzhou, #China. #go?
+2022-01-16 04:01:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1363416443728003077, "id": 1482563668416024584, "text": "RT @Where_Zhengzhou: Around the Spring Festival every year, there are folk art performances such as dragon dance in #Zhengzhou, #China. #go\u2026", "createdAt": 1642305697000}' to topic='twitter-topic'
+2022-01-16 04:01:42 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text toh and amphibia coming back soon? 
+
+both. 
+
+?SOON???
+
+move, spring semester: I got shows to watch
+2022-01-16 04:01:42 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1206610581899247616, "id": 1482563672304017410, "text": "toh and amphibia coming back soon? \n\nboth. \n\n\u201CSOON??\u201D\n\nmove, spring semester: I got shows to watch", "createdAt": 1642305698000}' to topic='twitter-topic'
+2022-01-16 04:01:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I was gonna say I can?t wait until pants and tshirt weather aka spring, but I forgot all we get is rain all year lol and hardly get that weather
+2022-01-16 04:01:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 562431608, "id": 1482563685612617728, "text": "I was gonna say I can\u2019t wait until pants and tshirt weather aka spring, but I forgot all we get is rain all year lol and hardly get that weather", "createdAt": 1642305702000}' to topic='twitter-topic'
+2022-01-16 04:01:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @laurencowling_ Having driven through Corpus Christie a million years ago in college on my way to Padre for spring break I never thought it would be a money maker, but here we are. Thanks for the pick!
+2022-01-16 04:01:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1187741810870886401, "id": 1482563701504978945, "text": "@laurencowling_ Having driven through Corpus Christie a million years ago in college on my way to Padre for spring break I never thought it would be a money maker, but here we are. Thanks for the pick!", "createdAt": 1642305705000}' to topic='twitter-topic'
+2022-01-16 04:01:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Had to make this the cover photo. Blancadooo ?? 
+
+Wearing matching @lovebonito?s new Lunar New Year | Spring collection! 
+ #LBOOTD #LBNewBeginnings #newyearnewstylechallenge https://t.co/11GCLR7vo0
+2022-01-16 04:01:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 39463146, "id": 1482563704403099651, "text": "Had to make this the cover photo. Blancadooo ?? \n\nWearing matching @lovebonito\u2019s new Lunar New Year | Spring collection! \n #LBOOTD #LBNewBeginnings #newyearnewstylechallenge https://t.co/11GCLR7vo0", "createdAt": 1642305706000}' to topic='twitter-topic'
+2022-01-16 04:01:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text M...N MY - Java burn weight loss reviews, & java burn reviews2022, - https://t.co/b86dGC8HUO
+2022-01-16 04:01:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1003978890031783936, "id": 1482563711252393987, "text": "M...N MY - Java burn weight loss reviews, & java burn reviews2022, - https://t.co/b86dGC8HUO", "createdAt": 1642305708000}' to topic='twitter-topic'
+2022-01-16 04:01:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @gp_pulipaka: Graph Neural Networks. #BigData #Analytics #DataScience #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #JavaScript?
+2022-01-16 04:01:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1097258235680227329, "id": 1482563714557562884, "text": "RT @gp_pulipaka: Graph Neural Networks. #BigData #Analytics #DataScience #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #JavaScript\u2026", "createdAt": 1642305708000}' to topic='twitter-topic'
+2022-01-16 04:01:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @pimaarizona This disgusting doc was created as Mayor of Tucson held the Seat in Ward 1
+https://t.co/3M54sIYr5V
+2022-01-16 04:01:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1482549528595087362, "id": 1482563716658839552, "text": "@pimaarizona This disgusting doc was created as Mayor of Tucson held the Seat in Ward 1\nhttps://t.co/3M54sIYr5V", "createdAt": 1642305709000}' to topic='twitter-topic'
+2022-01-16 04:01:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Obviously they werent able to hire anyone who they really wanted. Hard to build a staff a month before spring training. Probably should have just hired chavez for this role but its just bench coach
+2022-01-16 04:01:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1155700123323777025, "id": 1482563720123461633, "text": "Obviously they werent able to hire anyone who they really wanted. Hard to build a staff a month before spring training. Probably should have just hired chavez for this role but its just bench coach", "createdAt": 1642305710000}' to topic='twitter-topic'
+2022-01-16 04:01:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @GulfstreamPark: Moms Moon fends off La Maquina to spring a huge surprise in the nightcap, @JaramilloJockey in the saddle for trainer Ge?
+2022-01-16 04:01:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 45752029, "id": 1482563721964789769, "text": "RT @GulfstreamPark: Moms Moon fends off La Maquina to spring a huge surprise in the nightcap, @JaramilloJockey in the saddle for trainer Ge\u2026", "createdAt": 1642305710000}' to topic='twitter-topic'
+2022-01-16 04:01:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @rachsyme: so the theranos, ?ber, delvey, and wework shows all come out within 3 months? SCAM SPRING is here
+2022-01-16 04:01:54 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 2883615951, "id": 1482563723764056069, "text": "RT @rachsyme: so the theranos, ?ber, delvey, and wework shows all come out within 3 months? SCAM SPRING is here", "createdAt": 1642305711000}' to topic='twitter-topic'
+2022-01-16 04:01:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @PamKeithFL: It looks like Dean has taken up my crusade from last Spring! 
+
+We absolutely should be demanding that cable and streaming c?
+2022-01-16 04:01:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 825103325766971392, "id": 1482563727769550851, "text": "RT @PamKeithFL: It looks like Dean has taken up my crusade from last Spring! \n\nWe absolutely should be demanding that cable and streaming c\u2026", "createdAt": 1642305712000}' to topic='twitter-topic'
+2022-01-16 04:01:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text ?RAGE Shadowverse 2022 Spring?1????? 2???https://t.co/qdSgpKi8R0 #RAGE?????? 
+?????????????
+???
+???????
+????
+2022-01-16 04:01:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1128669902573674496, "id": 1482563731070484482, "text": "?RAGE Shadowverse 2022 Spring?1????? 2???https://t.co/qdSgpKi8R0 #RAGE?????? \n?????????????\n???\n???????\n????", "createdAt": 1642305712000}' to topic='twitter-topic'
+2022-01-16 04:01:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Where_Zhengzhou: Around the Spring Festival every year, there are folk art performances such as dragon dance in #Zhengzhou, #China. #go?
+2022-01-16 04:01:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1321333832180641792, "id": 1482563739241127940, "text": "RT @Where_Zhengzhou: Around the Spring Festival every year, there are folk art performances such as dragon dance in #Zhengzhou, #China. #go\u2026", "createdAt": 1642305714000}' to topic='twitter-topic'
+2022-01-16 04:01:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @geum_yoil: 1. Spring Day 
+2. Mikrokosmos
+3. Answer: Love Myself 
+4. Magic Shop
+5. Euphoria
+6. Life Goes On
+7. 2! 3!
+8. Love Maze
+9. Mak?
+2022-01-16 04:01:58 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1409479858493685762, "id": 1482563740113715201, "text": "RT @geum_yoil: 1. Spring Day \n2. Mikrokosmos\n3. Answer: Love Myself \n4. Magic Shop\n5. Euphoria\n6. Life Goes On\n7. 2! 3!\n8. Love Maze\n9. Mak\u2026", "createdAt": 1642305715000}' to topic='twitter-topic'
+2022-01-16 04:02:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @rikka271675: ???????? ???????? 2020 SUMMER casual idol ??????????? ?AtoZ 2021 SPRING
+
+???? ? HiMERU ?? ??? ?? ?
+
+??? ? ? ?? (??2??)
+
+???
+2022-01-16 04:02:01 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1464236137778933763, "id": 1482563751538982916, "text": "RT @rikka271675: ???????? ???????? 2020 SUMMER casual idol ??????????? ?AtoZ 2021 SPRING\n\n???? ? HiMERU ?? ??? ?? ?\n\n??? ? ? ?? (??2??)\n\n??\u2026", "createdAt": 1642305717000}' to topic='twitter-topic'
+2022-01-16 04:02:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @zhang_heqing: ????? ?? ???
+Snow is nature's generous gift to Jilin, it is the punchline of Jilin's winter tourism. In the winter of Jil?
+2022-01-16 04:02:03 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1003585113714593794, "id": 1482563759457509378, "text": "RT @zhang_heqing: ????? ?? ???\nSnow is nature's generous gift to Jilin, it is the punchline of Jilin's winter tourism. In the winter of Jil\u2026", "createdAt": 1642305719000}' to topic='twitter-topic'
+2022-01-16 04:02:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @QRena0125t: MODECON?in the spring?
+????????????????????????
+
+????
+?1/19 23:59??
+
+Twitter
+???????????????????
+1/16 23:59??
+
+WEB??
+https:?
+2022-01-16 04:02:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1482562079441981441, "id": 1482563770769895435, "text": "RT @QRena0125t: MODECON?in the spring?\n????????????????????????\n\n????\n?1/19 23:59??\n\nTwitter\n???????????????????\n1/16 23:59??\n\nWEB??\nhttps:\u2026", "createdAt": 1642305722000}' to topic='twitter-topic'
+2022-01-16 04:02:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text I?m just ready for it to be spring.
+2022-01-16 04:02:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 247143867, "id": 1482563772405460993, "text": "I\u2019m just ready for it to be spring.", "createdAt": 1642305722000}' to topic='twitter-topic'
+2022-01-16 04:02:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @JesseKellyDC Get ready for a Spring of Hemoragic Fever
+2022-01-16 04:02:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1468372740461985792, "id": 1482563775001620480, "text": "@JesseKellyDC Get ready for a Spring of Hemoragic Fever", "createdAt": 1642305723000}' to topic='twitter-topic'
+2022-01-16 04:02:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour "Kis-My-Ft ni Aeru de Show 2022" yesterday at Shizuoka's Ecopa A?
+2022-01-16 04:02:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 3376277293, "id": 1482563775559794694, "text": "RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour \"Kis-My-Ft ni Aeru de Show 2022\" yesterday at Shizuoka's Ecopa A\u2026", "createdAt": 1642305723000}' to topic='twitter-topic'
+2022-01-16 04:02:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @sugadboy @BTS_twt Spring day , es hermosa 
+
+#KOREAQUEST_JHOPE 
+#BTS_twt
+2022-01-16 04:02:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1260691982600544263, "id": 1482563782698225664, "text": "@sugadboy @BTS_twt Spring day , es hermosa \n\n#KOREAQUEST_JHOPE \n#BTS_twt", "createdAt": 1642305725000}' to topic='twitter-topic'
+2022-01-16 04:02:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Miaoxi New Beanies Women Fashion Striped Skullies Spring Autumn Warm Hat Scarf Two Used Casual Bonnet Hip Hop Color Brand Hats
+https://t.co/1yUENWElc3
+
+#lookoftheday #fashionblog https://t.co/NvaTpoyG6J
+2022-01-16 04:02:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1269659029502152710, "id": 1482563785625948160, "text": "Miaoxi New Beanies Women Fashion Striped Skullies Spring Autumn Warm Hat Scarf Two Used Casual Bonnet Hip Hop Color Brand Hats\nhttps://t.co/1yUENWElc3\n\n#lookoftheday #fashionblog https://t.co/NvaTpoyG6J", "createdAt": 1642305725000}' to topic='twitter-topic'
+2022-01-16 04:02:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Congratulations to the Bills. I am #OnToTheRedSox 
+
+The first game for the @RedSox in spring training is a against @GoNUbaseball on Feb 25. 
+
+41 days to baseball. Pats are #OnToNextSeason #ForeverNE
+2022-01-16 04:02:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 559175202, "id": 1482563802608676865, "text": "Congratulations to the Bills. I am #OnToTheRedSox \n\nThe first game for the @RedSox in spring training is a against @GoNUbaseball on Feb 25. \n\n41 days to baseball. Pats are #OnToNextSeason #ForeverNE", "createdAt": 1642305729000}' to topic='twitter-topic'
+2022-01-16 04:02:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @QuacksAnonymous @janbobrowicz @BanditQueen25 @BangzandButts He has not retracted it except saying I may or may not be her but it doesn?t matter before once again saying I?m her last spring. 
+
+But he has kept the entire framework of the things she?s been known to have done.
+2022-01-16 04:02:14 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 757118699212009472, "id": 1482563808124092419, "text": "@QuacksAnonymous @janbobrowicz @BanditQueen25 @BangzandButts He has not retracted it except saying I may or may not be her but it doesn\u2019t matter before once again saying I\u2019m her last spring. \n\nBut he has kept the entire framework of the things she\u2019s been known to have done.", "createdAt": 1642305731000}' to topic='twitter-topic'
+2022-01-16 04:02:16 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @Greg_Weisman: Spring.
+2022-01-16 04:02:16 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 769889918, "id": 1482563814151401473, "text": "RT @Greg_Weisman: Spring.", "createdAt": 1642305732000}' to topic='twitter-topic'
+2022-01-16 04:02:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @LSU: Get caught up on the latest campus operations during the pandemic before the spring semester begins Tuesday: https://t.co/9TiFvatb?
+2022-01-16 04:02:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1011442675466326020, "id": 1482563818140151809, "text": "RT @LSU: Get caught up on the latest campus operations during the pandemic before the spring semester begins Tuesday: https://t.co/9TiFvatb\u2026", "createdAt": 1642305733000}' to topic='twitter-topic'
+2022-01-16 04:02:18 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @maccha_1995: ??????2????????????????
+SPRING???????? https://t.co/eIJT0jMtWK
+2022-01-16 04:02:18 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1433795575166636036, "id": 1482563822124556295, "text": "RT @maccha_1995: ??????2????????????????\nSPRING???????? https://t.co/eIJT0jMtWK", "createdAt": 1642305734000}' to topic='twitter-topic'
+2022-01-16 04:02:20 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @rachsyme: so the theranos, ?ber, delvey, and wework shows all come out within 3 months? SCAM SPRING is here
+2022-01-16 04:02:20 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 20212372, "id": 1482563832505638914, "text": "RT @rachsyme: so the theranos, ?ber, delvey, and wework shows all come out within 3 months? SCAM SPRING is here", "createdAt": 1642305737000}' to topic='twitter-topic'
+2022-01-16 04:02:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Once upon a time, Java the outstanding difficult language set out for adventures. Java found an ancient book and opened it.  As Java read, the book told an enchanting tale: Once upon a time, C++ the professional programming language set out for adventures. C++ went home.
+2022-01-16 04:02:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 718463394278477824, "id": 1482563833554096134, "text": "Once upon a time, Java the outstanding difficult language set out for adventures. Java found an ancient book and opened it.  As Java read, the book told an enchanting tale: Once upon a time, C++ the professional programming language set out for adventures. C++ went home.", "createdAt": 1642305737000}' to topic='twitter-topic'
+2022-01-16 04:02:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour "Kis-My-Ft ni Aeru de Show 2022" yesterday at Shizuoka's Ecopa A?
+2022-01-16 04:02:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 983260518784745472, "id": 1482563839967531011, "text": "RT @johnnys: The members of #KisMyFt2 kicked off their newest concert tour \"Kis-My-Ft ni Aeru de Show 2022\" yesterday at Shizuoka's Ecopa A\u2026", "createdAt": 1642305738000}' to topic='twitter-topic'
+2022-01-16 04:02:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @1JunkYardDawg: Hey PNW friends, check it out!
+2022-01-16 04:02:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 751290541707390976, "id": 1482563845155524608, "text": "RT @1JunkYardDawg: Hey PNW friends, check it out!", "createdAt": 1642305740000}' to topic='twitter-topic'
+2022-01-16 04:02:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text @euphoriaslight @28ocIock #springdayenthusiasts ???? spring day is queen for a reason ?
+2022-01-16 04:02:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1020835373415481344, "id": 1482563862759030785, "text": "@euphoriaslight @28ocIock #springdayenthusiasts ???? spring day is queen for a reason ?", "createdAt": 1642305744000}' to topic='twitter-topic'
+2022-01-16 04:02:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Y?all don?t wanna play this game with my squad. #ViewCountry
+2022-01-16 04:02:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 102564127, "id": 1482563862675271682, "text": "Y\u2019all don\u2019t wanna play this game with my squad. #ViewCountry", "createdAt": 1642305744000}' to topic='twitter-topic'
+2022-01-16 04:02:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text RT @RealHollyGarner: After the New Year holidays, I really want spring already. https://t.co/cc8T5uVg7E
+2022-01-16 04:02:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 3058124260, "id": 1482563863174340608, "text": "RT @RealHollyGarner: After the New Year holidays, I really want spring already. https://t.co/cc8T5uVg7E", "createdAt": 1642305744000}' to topic='twitter-topic'
+2022-01-16 04:02:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text Old Bhoys SC will be in attendance, along with several other amateur clubs in Indiana.  We're looking for competitive players to join us for our Spring and Summer @ovplsoccer seasons.
+
+Hit us up!
+
+#coyob
+2022-01-16 04:02:31 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1366942807043297283, "id": 1482563877569187843, "text": "Old Bhoys SC will be in attendance, along with several other amateur clubs in Indiana.  We're looking for competitive players to join us for our Spring and Summer @ovplsoccer seasons.\n\nHit us up!\n\n#coyob", "createdAt": 1642305747000}' to topic='twitter-topic'
+2022-01-16 04:02:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Twitter status with text 2022 LPL Spring regular season, week 1, day 7, match 3
+
+Starting for Weibo Gaming (1-0)
+ 
+Top: TheShy
+Jungle: SofM
+Mid: Angel
+ADC: huanfeng 
+Support: ON
+
+Starting for @BilibiliGaming (0-0)
+
+Top: Breathe
+Jungle: Weiwei
+Mid: Fofo
+ADC: Doggo
+Support: Crisp 
+
+#WBGWIN #BLGWIN #LPL
+2022-01-16 04:02:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.s.i.TwitterKafkaProducer - Sending message='{"userId": 1449071774721724424, "id": 1482563879402196994, "text": "2022 LPL Spring regular season, week 1, day 7, match 3\n\nStarting for Weibo Gaming (1-0)\n \nTop: TheShy\nJungle: SofM\nMid: Angel\nADC: huanfeng \nSupport: ON\n\nStarting for @BilibiliGaming (0-0)\n\nTop: Breathe\nJungle: Weiwei\nMid: Fofo\nADC: Doggo\nSupport: Crisp \n\n#WBGWIN #BLGWIN #LPL", "createdAt": 1642305748000}' to topic='twitter-topic'
+2022-01-16 04:02:32 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2022-01-16 04:02:32 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2022-01-16 04:02:32 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-01-16 04:02:32 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2022-01-16 04:02:32 [SpringApplicationShutdownHook] INFO  c.m.d.t.t.k.s.r.i.TwitterKafkaStreamRunner - closing the twitter stream...

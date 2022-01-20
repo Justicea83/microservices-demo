@@ -4,6 +4,8 @@ import com.microservices.demo.config.KafkaConfigData;
 import com.microservices.demo.config.KafkaProducerConfigData;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -14,10 +16,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @Configuration
 public class KafkaProducerConfig<K extends Serializable, V extends SpecificRecordBase> {
     private final KafkaConfigData kafkaConfigData;
     private final KafkaProducerConfigData kafkaProducerConfigData;
+    private final Logger LOG = LoggerFactory.getLogger(KafkaProducerConfig.class);
 
     public KafkaProducerConfig(KafkaConfigData kafkaConfigData, KafkaProducerConfigData kafkaProducerConfigData) {
         this.kafkaConfigData = kafkaConfigData;
@@ -39,6 +43,7 @@ public class KafkaProducerConfig<K extends Serializable, V extends SpecificRecor
         props.put(ProducerConfig.RETRIES_CONFIG, kafkaProducerConfigData.getRetryCount());
         return props;
     }
+
     @Bean
     public ProducerFactory<K,V> producerFactory(){
         return new DefaultKafkaProducerFactory<>(producerConfig());
